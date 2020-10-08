@@ -5,6 +5,34 @@ inputOutput::inputOutput()
 
 }
 
+Data inputOutput::getData(){
+    return user;
+}
+
+bool inputOutput::setData(Data k)
+{
+    QJsonObject data;
+    data.insert("Age", k.getage());
+    data.insert("Height", k.getheight());
+    data.insert("Sex", k.getsex());
+    data.insert("Weight", k.getweight());
+    book[k.getuname()] = data;
+    QJsonDocument content;
+    content.setObject(book);
+    QByteArray bytes = content.toJson(QJsonDocument::Indented);
+    QFile file("./UAuth.json");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        QTextStream istream(&file);
+        istream.setCodec("utf-8");
+        istream << bytes;
+        file.close();
+    }
+    else{
+        qDebug() <<"file open failed\n";
+    }
+    return true;
+}
+
 bool inputOutput::create_user(Data k)
 {
     if(book.contains(k.getuname())){

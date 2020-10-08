@@ -12,15 +12,21 @@ SOURCES += \
     inputoutput.cpp \
     main.cpp \
     getfit.cpp \
+    mainmenu.cpp \
+    menu.cpp \
     usercreation.cpp
 
 HEADERS += \
     getfit.h \
     inputoutput.h \
+    mainmenu.h \
+    menu.h \
     usercreation.h
 
 FORMS += \
     getfit.ui \
+    mainmenu.ui \
+    menu.ui \
     usercreation.ui
 
 # Default rules for deployment.
