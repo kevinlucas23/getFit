@@ -59,7 +59,9 @@ class inputOutput
 public:
     inputOutput();
     bool create_user(Data k);
+    bool setData(Data k);
     void read_users();
+    Data getData();
     bool check_user(QString kev, QString pass);
     QJsonObject getBook();
 
