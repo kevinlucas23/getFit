@@ -10,7 +10,7 @@ userCreation::userCreation(QWidget *parent) :
     ui(new Ui::userCreation)
 {
     ui->setupUi(this);
-    QPixmap bkgnd("pic2.jpg");
+    QPixmap bkgnd("../getFit/pic2.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette pal;
     pal.setBrush(QPalette::Background, bkgnd);
