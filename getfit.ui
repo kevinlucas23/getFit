@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>GetFit</string>
+     <string>Login</string>
     </property>
     <widget class="QRadioButton" name="button_s">
      <property name="geometry">
@@ -57,7 +57,11 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="user_sign"/>
+       <widget class="QLineEdit" name="user_sign">
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -137,7 +141,7 @@
      <x>0</x>
      <y>0</y>
      <width>349</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -1,11 +1,41 @@
 #include "usercreation.h"
 #include "ui_usercreation.h"
+#include "mainmenu.h"
+#include "menu.h"
+#include "ui_mainmenu.h"
+#include "ui_menu.h"
 
 userCreation::userCreation(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::userCreation)
 {
     ui->setupUi(this);
+    QPixmap bkgnd("pic2.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette pal;
+    pal.setBrush(QPalette::Background, bkgnd);
+    this->setWindowTitle("getFit");
+    this->setPalette(pal);
+    QPalette readOnlyPalette;
+    readOnlyPalette.setColor(QPalette::Base, Qt::transparent);
+    readOnlyPalette.setColor(QPalette::Text,Qt::white);
+    ui->uname_create->setPalette(readOnlyPalette);
+    ui->passw1_create->setPalette(readOnlyPalette);
+    ui->passw2_create->setPalette(readOnlyPalette);
+    ui->email_create->setPalette(readOnlyPalette);
+    QPalette ko;
+    ko.setColor(QPalette::WindowText,Qt::white);
+    ui->label->setPalette(ko);
+    ui->label_2->setPalette(ko);
+    ui->label_3->setPalette(ko);
+    ui->label_4->setPalette(ko);
+    ui->label_5->setPalette(ko);
+    ui->label_6->setPalette(ko);
+    ui->passw_radio->setPalette(ko);
+    QPalette kok;
+    kok.setColor(QPalette::WindowText,Qt::darkGray);
+    ui->groupBox->setPalette(kok);
+
 }
 
 userCreation::~userCreation()
@@ -23,19 +53,31 @@ void userCreation::on_push_createa_clicked()
                 us.email = ui->email_create->text();
                 us.password = pass1;
                 us.username = ui->uname_create->text();
+                if(!ui->email_create->text().contains("@")){
+                    QLabel* lab = ui->label_6;
+                    lab->setStyleSheet("QLabel { background-color : transparent; color : blue; }");
+                    lab->setText("wrong email format");
+                    return;
+                }
                 read_users();
                 if(!create_user(us)){
                     QLabel* lab = ui->label_6;
-                    lab->setStyleSheet("QLabel { background-color : red; color : blue; }");
+                    lab->setStyleSheet("QLabel { background-color : transparent; color : blue; }");
                     lab->setText("username already exist, try something else");
                     return;
                 }
 
-                QMessageBox::information(this, "Create", "Created successfully");
+                // QMessageBox::information(this, "Create", "Created successfully");
+                this->hide();
+                Menu menu;
+                menu.setUserString(ui->uname_create->text());
+                menu.setModal(true);
+                menu.exec();
                 return;
             }
+
             QLabel* lab = ui->label_6;
-            lab->setStyleSheet("QLabel { background-color : red; color : blue; }");
+            lab->setStyleSheet("QLabel { background-color : transparent; color : blue; }");
             lab->setText("password size is less than 6 characters");
             return;
         }
@@ -44,7 +86,7 @@ void userCreation::on_push_createa_clicked()
     }
 
     QLabel* lab = ui->label_6;
-    lab->setStyleSheet("QLabel { background-color : red; color : blue; }");
+    lab->setStyleSheet("QLabel { background-color : transparent; color : blue; }");
     lab->setText("some boxes above are empty");
     return;
 }

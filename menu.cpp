@@ -6,6 +6,11 @@ Menu::Menu(QWidget *parent) :
     ui(new Ui::Menu)
 {
     ui->setupUi(this);
+    QPixmap bkgnd("pic3.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette pal;
+    pal.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(pal);
 }
 
 Menu::~Menu()
@@ -22,6 +27,10 @@ void Menu::setUserString(QString userStr){
 }
 
 void Menu::setNewData(){
+    if(ui->age->text().toInt() <= 3 || ui->height->text().toDouble() <= 0 || ui->weight->text().toDouble() <= 40){
+        QMessageBox::information(this, "Error", "wrong inputs entered");
+        return;
+    }
     Data data;
     data.age = ui->age->text().toInt();
     data.height = ui->height->text().toDouble();

@@ -11,7 +11,25 @@ getFit::getFit(QWidget *parent)
 {
     ui->setupUi(this);
     ui->label_3->setText("Welcome...");
-    setStyleSheet( "background-image:url(pic.jpg);" ); //this works
+    QPixmap bkgnd("pic.jpg");
+    bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+    QPalette pal;
+    pal.setBrush(QPalette::Background, bkgnd);
+    this->setPalette(pal);
+    QPalette readOnlyPalette = ui->user_sign->palette();
+    readOnlyPalette.setColor(QPalette::Base, Qt::transparent);
+    readOnlyPalette.setColor(QPalette::Text,Qt::white);
+    ui->user_sign->setPalette(readOnlyPalette);
+    ui->passw_sign->setPalette(readOnlyPalette);
+
+    QPalette ko;
+    ko.setColor(QPalette::WindowText,Qt::white);
+    ui->label->setPalette(ko);
+    ui->label_2->setPalette(ko);
+    ui->label_3->setPalette(ko);
+    ui->button_s->setPalette(ko);
+    ui->groupBox->setPalette(ko);
+//    setStyleSheet( "background-image:url(pic.jpg);" ); //this works
 }
 
 getFit::~getFit()
@@ -29,7 +47,7 @@ void getFit::on_push_signin_clicked()
         QMessageBox::information(this, "Login","wrong Password or Username");
         return;
     }
-    QMessageBox::information(this, "Login","Correct");
+    // QMessageBox::information(this, "Login","Correct");
     this->hide();
     Menu menu;
     menu.setUserString(ui->user_sign->text());

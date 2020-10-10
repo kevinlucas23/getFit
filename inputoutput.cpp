@@ -11,12 +11,13 @@ Data inputOutput::getData(){
 
 bool inputOutput::setData(Data k)
 {
-    QJsonObject data;
-    data.insert("Age", k.getage());
-    data.insert("Height", k.getheight());
-    data.insert("Sex", k.getsex());
-    data.insert("Weight", k.getweight());
-    book[k.getuname()] = data;
+    auto obj =  book.value(k.getuname()).toObject();
+    obj["Age"] = k.getage();
+    obj["Height"] = k.getheight();
+    obj["Sex"] = k.getsex();
+    obj["Weight"] = k.getweight();
+    book[k.getuname()] = obj;
+
     QJsonDocument content;
     content.setObject(book);
     QByteArray bytes = content.toJson(QJsonDocument::Indented);
