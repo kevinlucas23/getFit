@@ -11,7 +11,7 @@ getFit::getFit(QWidget *parent)
 {
     ui->setupUi(this);
     ui->label_3->setText("Welcome...");
-    QPixmap bkgnd("pic.jpg");
+    QPixmap bkgnd("../getFit/pic.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette pal;
     pal.setBrush(QPalette::Background, bkgnd);
