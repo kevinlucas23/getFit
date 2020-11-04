@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "ui_menu.h"
+#include "selectionmenu.h"
 
 Menu::Menu(QWidget *parent) :
     QDialog(parent),
@@ -38,6 +39,15 @@ void Menu::setNewData(){
     data.sex = ui->sex->currentText();
     auto name = ui->welcome_label->text().split(QLatin1Char(' '))[1].split(QLatin1Char('!'))[0];
     data.username = name;
+    if(ui->gain->isChecked()){
+        data.loseWeight = false;
+    }else{
+        data.loseWeight = true;
+    }
     read_users();
     setData(data);
+    this->hide();
+    selectionmenu selectionMenu;
+    selectionMenu.setModal(true);
+    selectionMenu.exec();
 }

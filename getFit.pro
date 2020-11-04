@@ -9,24 +9,36 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    activitylog.cpp \
+    foodlog.cpp \
     inputoutput.cpp \
     main.cpp \
     getfit.cpp \
     mainmenu.cpp \
     menu.cpp \
+    selectionmenu.cpp \
+    sleeplog.cpp \
     usercreation.cpp
 
 HEADERS += \
+    activitylog.h \
+    foodlog.h \
     getfit.h \
     inputoutput.h \
     mainmenu.h \
     menu.h \
+    selectionmenu.h \
+    sleeplog.h \
     usercreation.h
 
 FORMS += \
+    activitylog.ui \
+    foodlog.ui \
     getfit.ui \
     mainmenu.ui \
     menu.ui \
+    selectionmenu.ui \
+    sleeplog.ui \
     usercreation.ui
 
 # Default rules for deployment.

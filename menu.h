@@ -3,6 +3,7 @@
 
 #include "inputoutput.h"
 #include <QDialog>
+#include "selectionmenu.h"
 
 namespace Ui {
 class Menu;

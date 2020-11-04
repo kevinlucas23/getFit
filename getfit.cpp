@@ -4,6 +4,7 @@
 #include "ui_getfit.h"
 #include "ui_mainmenu.h"
 #include "ui_menu.h"
+#include "selectionmenu.h"
 
 getFit::getFit(QWidget *parent)
     : QMainWindow(parent)
@@ -49,10 +50,14 @@ void getFit::on_push_signin_clicked()
     }
     // QMessageBox::information(this, "Login","Correct");
     this->hide();
-    Menu menu;
+    /*Menu menu;
     menu.setUserString(ui->user_sign->text());
     menu.setModal(true);
     menu.exec();
+    */
+    selectionmenu selectionMenu;
+    selectionMenu.setModal(true);
+    selectionMenu.exec();
     return;
 }
 

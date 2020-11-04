@@ -22,6 +22,7 @@ struct Data{
     qint32 phone_n;
     QString username;
     QString password;
+    bool loseWeight;
     Data(){
         weight = 0;
         height = 0;
@@ -51,6 +52,9 @@ struct Data{
     }
     QString getpasswd(){
         return password;
+    }
+    bool getGoal(){
+        return loseWeight;
     }
 };
 
