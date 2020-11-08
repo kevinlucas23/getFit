@@ -9,24 +9,42 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    caloriegoal.cpp \
+    dailyexercise.cpp \
+    foodintake.cpp \
     inputoutput.cpp \
     main.cpp \
     getfit.cpp \
     mainmenu.cpp \
     menu.cpp \
+    showgraphs.cpp \
+    suggestions.cpp \
+    updateweight.cpp \
     usercreation.cpp
 
 HEADERS += \
+    caloriegoal.h \
+    dailyexercise.h \
+    foodintake.h \
     getfit.h \
     inputoutput.h \
     mainmenu.h \
     menu.h \
+    showgraphs.h \
+    suggestions.h \
+    updateweight.h \
     usercreation.h
 
 FORMS += \
+    caloriegoal.ui \
+    dailyexercise.ui \
+    foodintake.ui \
     getfit.ui \
     mainmenu.ui \
     menu.ui \
+    showgraphs.ui \
+    suggestions.ui \
+    updateweight.ui \
     usercreation.ui
 
 # Default rules for deployment.

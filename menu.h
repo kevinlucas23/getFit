@@ -15,6 +15,7 @@ class Menu : public QDialog, public inputOutput
 public:
     explicit Menu(QWidget *parent = nullptr);
     inputOutput getInOut();
+    void setCurrentUser(QString user);
     ~Menu();
 
 public slots:
@@ -24,7 +25,7 @@ public slots:
 private:
     Ui::Menu *ui;
     inputOutput inout;
-    QString userStr;
+    QString currentUser;
 };
 
 #endif // MENU_H

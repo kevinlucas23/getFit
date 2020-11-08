@@ -11,7 +11,8 @@ getFit::getFit(QWidget *parent)
 {
     ui->setupUi(this);
     ui->label_3->setText("Welcome...");
-    QPixmap bkgnd("../getFit/pic.jpg");
+    /*
+    QPixmap bkgnd("../getFit/pic1.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette pal;
     pal.setBrush(QPalette::Background, bkgnd);
@@ -29,6 +30,7 @@ getFit::getFit(QWidget *parent)
     ui->label_3->setPalette(ko);
     ui->button_s->setPalette(ko);
     ui->groupBox->setPalette(ko);
+    */
 //    setStyleSheet( "background-image:url(pic.jpg);" ); //this works
 }
 
@@ -49,10 +51,13 @@ void getFit::on_push_signin_clicked()
     }
     // QMessageBox::information(this, "Login","Correct");
     this->hide();
-    Menu menu;
-    menu.setUserString(ui->user_sign->text());
-    menu.setModal(true);
-    menu.exec();
+    //Menu menu;
+    MainMenu* mainMenu = new MainMenu();
+    //menu.setUserString(ui->user_sign->text());
+    //menu.setModal(true);
+    mainMenu->setCurrentUser(ui->user_sign->text());
+    mainMenu->show();
+    //menu.exec();
     return;
 }
 

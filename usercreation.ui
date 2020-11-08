@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>376</width>
-    <height>377</height>
+    <width>370</width>
+    <height>559</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>20</x>
      <y>10</y>
      <width>331</width>
-     <height>341</height>
+     <height>531</height>
     </rect>
    </property>
    <property name="title">
@@ -30,7 +30,7 @@
      <rect>
       <x>30</x>
       <y>200</y>
-      <width>201</width>
+      <width>271</width>
       <height>16</height>
      </rect>
     </property>
@@ -43,20 +43,20 @@
      <rect>
       <x>30</x>
       <y>280</y>
-      <width>131</width>
+      <width>251</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Make password visible.</string>
+     <string>Make password visible</string>
     </property>
    </widget>
    <widget class="QPushButton" name="push_createa">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>310</y>
-      <width>121</width>
+      <x>80</x>
+      <y>470</y>
+      <width>161</width>
       <height>23</height>
      </rect>
     </property>
@@ -70,7 +70,7 @@
       <x>30</x>
       <y>30</y>
       <width>271</width>
-      <height>41</height>
+      <height>50</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -86,13 +86,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget2">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>90</y>
       <width>271</width>
-      <height>41</height>
+      <height>50</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -108,13 +108,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget3">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>150</y>
       <width>271</width>
-      <height>41</height>
+      <height>73</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -134,13 +134,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget4">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>230</y>
       <width>271</width>
-      <height>41</height>
+      <height>50</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -160,19 +160,94 @@
      </item>
     </layout>
    </widget>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>350</y>
-     <width>331</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>330</y>
+      <width>71</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <widget class="QLabel" name="heightlabel">
+       <property name="text">
+        <string>Height:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="weightlabel">
+       <property name="text">
+        <string>Weight:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="agelabel">
+       <property name="text">
+        <string>Age:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="sexlabel">
+       <property name="text">
+        <string>Sex:</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>330</y>
+      <width>88</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_8">
+     <item>
+      <widget class="QSpinBox" name="heightbox"/>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="weightbox"/>
+     </item>
+     <item>
+      <widget class="QSpinBox" name="agebox"/>
+     </item>
+     <item>
+      <widget class="QComboBox" name="sexbox">
+       <item>
+        <property name="text">
+         <string>M</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>300</y>
+      <width>331</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

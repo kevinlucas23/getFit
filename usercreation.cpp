@@ -10,6 +10,7 @@ userCreation::userCreation(QWidget *parent) :
     ui(new Ui::userCreation)
 {
     ui->setupUi(this);
+    /*
     QPixmap bkgnd("../getFit/pic2.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
     QPalette pal;
@@ -35,7 +36,7 @@ userCreation::userCreation(QWidget *parent) :
     QPalette kok;
     kok.setColor(QPalette::WindowText,Qt::darkGray);
     ui->groupBox->setPalette(kok);
-
+    */
 }
 
 userCreation::~userCreation()
@@ -53,6 +54,10 @@ void userCreation::on_push_createa_clicked()
                 us.email = ui->email_create->text();
                 us.password = pass1;
                 us.username = ui->uname_create->text();
+                us.age = ui->agebox->text().toInt();
+                us.weight = ui->weightbox->text().toInt();
+                us.height = ui->heightbox->text().toInt();
+                us.sex = ui->sexbox->currentText();
                 if(!ui->email_create->text().contains("@")){
                     QLabel* lab = ui->label_6;
                     lab->setStyleSheet("QLabel { background-color : transparent; color : blue; }");
@@ -69,10 +74,13 @@ void userCreation::on_push_createa_clicked()
 
                 // QMessageBox::information(this, "Create", "Created successfully");
                 this->hide();
-                Menu menu;
-                menu.setUserString(ui->uname_create->text());
-                menu.setModal(true);
-                menu.exec();
+                MainMenu* mainMenu = new MainMenu();
+                mainMenu->setCurrentUser(ui->uname_create->text());
+                mainMenu->show();
+                //Menu menu;
+                //menu.setUserString(ui->uname_create->text());
+                //menu.setModal(true);
+                //menu.exec();
                 return;
             }
 
