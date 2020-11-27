@@ -18,9 +18,11 @@ SOURCES += \
     mainmenu.cpp \
     menu.cpp \
     showgraphs.cpp \
+    sleep.cpp \
     suggestions.cpp \
     updateweight.cpp \
-    usercreation.cpp
+    usercreation.cpp \
+    weightlifting.cpp
 
 HEADERS += \
     caloriegoal.h \
@@ -31,9 +33,11 @@ HEADERS += \
     mainmenu.h \
     menu.h \
     showgraphs.h \
+    sleep.h \
     suggestions.h \
     updateweight.h \
-    usercreation.h
+    usercreation.h \
+    weightlifting.h
 
 FORMS += \
     caloriegoal.ui \
@@ -43,9 +47,11 @@ FORMS += \
     mainmenu.ui \
     menu.ui \
     showgraphs.ui \
+    sleep.ui \
     suggestions.ui \
     updateweight.ui \
-    usercreation.ui
+    usercreation.ui \
+    weightlifting.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

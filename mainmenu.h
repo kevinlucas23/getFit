@@ -9,6 +9,8 @@
 #include "showgraphs.h"
 #include "suggestions.h"
 #include "updateweight.h"
+#include "weightlifting.h"
+#include "sleep.h"
 
 namespace Ui {
 class MainMenu;
@@ -34,6 +36,8 @@ private slots:
     void dailyExercise();
     void foodIntake();
     void updateWeight();
+    void weightlifting();
+    void sleep();
 };
 
 #endif // MAINMENU_H

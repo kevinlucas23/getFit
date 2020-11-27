@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Weightlifting</class>
+ <widget class="QDialog" name="Weightlifting">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>527</width>
+    <height>305</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>260</y>
+     <width>171</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>40</y>
+     <width>131</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+     <widget class="QLabel" name="exLabel">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Type of Exercise</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ex1_6">
+      <item>
+       <property name="text">
+        <string>Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dumbell Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Dumbell Bench</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Squat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Deadlift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lateral Raise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Overhead Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bicep Curls</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tricep Extension</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ex1_5">
+      <item>
+       <property name="text">
+        <string>Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dumbell Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Dumbell Bench</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Squat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Deadlift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lateral Raise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Overhead Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bicep Curls</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tricep Extension</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ex1_4">
+      <item>
+       <property name="text">
+        <string>Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dumbell Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Dumbell Bench</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Squat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Deadlift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lateral Raise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Overhead Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bicep Curls</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tricep Extension</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ex1_3">
+      <item>
+       <property name="text">
+        <string>Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dumbell Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Dumbell Bench</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Squat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Deadlift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lateral Raise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Overhead Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bicep Curls</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tricep Extension</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ex1_2">
+      <item>
+       <property name="text">
+        <string>Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dumbell Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Dumbell Bench</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Squat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Deadlift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lateral Raise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Overhead Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bicep Curls</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tricep Extension</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QComboBox" name="ex1">
+      <item>
+       <property name="text">
+        <string>Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Dumbell Bench Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Incline Dumbell Bench</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Squat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Deadlift</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Lateral Raise</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Overhead Press</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bicep Curls</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tricep Extension</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>121</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="setslabel">
+      <property name="text">
+       <string>Sets</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_3"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_2"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_6"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_5"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_4"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>40</y>
+     <width>111</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="repslabel">
+      <property name="text">
+       <string>Reps</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_9"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_8"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_12"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_10"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_11"/>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_7"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_4">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>40</y>
+     <width>111</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item alignment="Qt::AlignHCenter">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Weight</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_16">
+      <property name="maximum">
+       <number>1000</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_18">
+      <property name="maximum">
+       <number>1000</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_15">
+      <property name="maximum">
+       <number>1000</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_19">
+      <property name="maximum">
+       <number>1000</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_17">
+      <property name="maximum">
+       <number>1000</number>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSpinBox" name="spinBox_14">
+      <property name="maximum">
+       <number>1000</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Weightlifting</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Weightlifting</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>280</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

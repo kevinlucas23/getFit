@@ -55,7 +55,7 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>470</y>
+      <y>500</y>
       <width>161</width>
       <height>23</height>
      </rect>
@@ -163,24 +163,24 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>55</x>
       <y>330</y>
-      <width>71</width>
-      <height>131</height>
+      <width>111</width>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_7">
      <item>
       <widget class="QLabel" name="heightlabel">
        <property name="text">
-        <string>Height:</string>
+        <string>Height (in):</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="weightlabel">
        <property name="text">
-        <string>Weight:</string>
+        <string>Weight (lb):</string>
        </property>
       </widget>
      </item>
@@ -198,6 +198,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Weight Goal:</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -205,8 +212,8 @@
      <rect>
       <x>160</x>
       <y>330</y>
-      <width>88</width>
-      <height>131</height>
+      <width>111</width>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -229,6 +236,20 @@
        <item>
         <property name="text">
          <string>F</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Gain Weight</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Lose Weight</string>
         </property>
        </item>
       </widget>

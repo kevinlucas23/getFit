@@ -51,3 +51,15 @@ void MainMenu::updateWeight(){
     uw.setModal(true);
     uw.exec();
 }
+
+void MainMenu::weightlifting(){
+    Weightlifting w;
+    w.setModal(true);
+    w.exec();
+}
+
+void MainMenu::sleep(){
+    Sleep s;
+    s.setModal(true);
+    s.exec();
+}
