@@ -12,6 +12,7 @@ SOURCES += \
     caloriegoal.cpp \
     dailyexercise.cpp \
     foodintake.cpp \
+    graphsuggest.cpp \
     inputoutput.cpp \
     main.cpp \
     getfit.cpp \
@@ -29,6 +30,7 @@ HEADERS += \
     dailyexercise.h \
     foodintake.h \
     getfit.h \
+    graphsuggest.h \
     inputoutput.h \
     mainmenu.h \
     menu.h \
@@ -44,6 +46,7 @@ FORMS += \
     dailyexercise.ui \
     foodintake.ui \
     getfit.ui \
+    graphsuggest.ui \
     mainmenu.ui \
     menu.ui \
     showgraphs.ui \

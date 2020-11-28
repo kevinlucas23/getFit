@@ -18,14 +18,11 @@ void MainMenu::setCurrentUser(QString user){
     ui->welcomelabel->setText("Welcome " + user + "!");
 }
 
-void MainMenu::showGraphs(){
-    ShowGraphs *sg = new ShowGraphs();
+void MainMenu::graphSuggest(){
+    // add stuff to json file
+    this->hide();
+    GraphSuggest *sg = new GraphSuggest();
     sg->show();
-}
-
-void MainMenu::suggestions(){
-    Suggestions *s = new Suggestions();
-    s->show();
 }
 
 void MainMenu::calorieGoal(){
