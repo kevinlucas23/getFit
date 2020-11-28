@@ -59,6 +59,8 @@ void userCreation::on_push_createa_clicked()
                 us.weight = ui->weightbox->text().toInt();
                 us.height = ui->heightbox->text().toInt();
                 us.sex = ui->sexbox->currentText();
+                QString temp = ui->comboBox->currentText();
+                us.gain_lose = (temp == "Gain Weight") ? true : false;
                 if(!ui->email_create->text().contains("@")){
                     QLabel* lab = ui->label_6;
                     lab->setStyleSheet("QLabel { background-color : transparent; color : blue; }");

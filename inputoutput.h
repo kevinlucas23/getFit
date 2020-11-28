@@ -19,14 +19,13 @@ struct Data{
     qreal weight;
     qreal height;
     qint32 age;
-    qint32 phone_n;
     QString username;
     QString password;
+    bool gain_lose;
     Data(){
         weight = 0;
         height = 0;
         age = 0;
-        phone_n = 0;
     }
     QString getemail(){
         return email;
@@ -43,14 +42,14 @@ struct Data{
     qint32 getage(){
         return age;
     }
-    qint32 getphone(){
-        return phone_n;
-    }
     QString getuname(){
         return username;
     }
     QString getpasswd(){
         return password;
+    }
+    bool getgain(){
+        return gain_lose;
     }
 };
 

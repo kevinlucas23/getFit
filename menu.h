@@ -19,7 +19,6 @@ public:
     ~Menu();
 
 public slots:
-    void setUserString(QString userStr);
     void setNewData();
 
 private:

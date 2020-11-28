@@ -16,6 +16,7 @@ bool inputOutput::setData(Data k)
     obj["Height"] = k.getheight();
     obj["Sex"] = k.getsex();
     obj["Weight"] = k.getweight();
+    obj["G/L"] = (k.getgain()) ? "Gain" : "Lose";
     book[k.getuname()] = obj;
 
     QJsonDocument content;
@@ -44,9 +45,9 @@ bool inputOutput::create_user(Data k)
     all.insert("Age", k.getage());
     all.insert("Height", k.getheight());
     all.insert("Sex", k.getsex());
-    all.insert("Phone Number", k.getphone());
     all.insert("Weight", k.getweight());
     all.insert("Password", k.getpasswd());
+    all.insert("G/L", "");
     book[k.getuname()] = all;
     QJsonDocument content;
     content.setObject(book);
