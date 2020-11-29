@@ -2,7 +2,6 @@
 #include "ui_usercreation.h"
 #include "mainmenu.h"
 #include "ui_mainmenu.h"
-#include "ui_menu.h"
 
 userCreation::userCreation(QWidget *parent) :
     QDialog(parent),

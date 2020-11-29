@@ -27,7 +27,7 @@ void MainMenu::graphSuggest(){
     // Format should be like this
     // "Dates": {"11/28/20": {"weight": 171, "sleep": 8, "cals": 3000, "food": {"carbs": 900, "proteins": 400, "fv": 300, "dairy": 500}}}
 
-    addData(ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy);
+    addData(currentUser, ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy);
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();

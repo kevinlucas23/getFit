@@ -2,7 +2,6 @@
 #include "mainmenu.h"
 #include "ui_getfit.h"
 #include "ui_mainmenu.h"
-#include "ui_menu.h"
 
 getFit::getFit(QWidget *parent)
     : QMainWindow(parent)

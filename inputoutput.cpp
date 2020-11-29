@@ -1,5 +1,7 @@
 #include "inputoutput.h"
 
+#include <inputoutput.h>
+
 inputOutput::inputOutput()
 {
 
@@ -9,7 +11,23 @@ Data inputOutput::getData(){
     return user;
 }
 
-void inputOutput::addData(QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
+void inputOutput::updateFile(QJsonObject Book){
+    QJsonDocument content;
+    content.setObject(Book);
+    QByteArray bytes = content.toJson(QJsonDocument::Indented);
+    QFile file("./UAuth.json");
+    if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
+        QTextStream istream(&file);
+        istream.setCodec("utf-8");
+        istream << bytes;
+        file.close();
+    }
+    else{
+        qDebug() <<"file open failed\n";
+    }
+}
+
+void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     QJsonObject statsObject;
     statsObject.insert("weight", QJsonValue::fromVariant(weight));
@@ -23,37 +41,17 @@ void inputOutput::addData(QDate date, int weight, int cals, int sleep, int carbs
     foodObject.insert("dairy", dairy);
     statsObject.insert("food", foodObject);
 
-    QJsonObject dateObject;
+//    QJsonObject dateObject;
     QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
-    dateObject.insert(ds, statsObject);
 
-    QJsonDocument doc(dateObject);
-    qDebug() << doc.toJson();
-}
+    read_users();
+    auto obj =  book.value(user).toObject();
+    auto temp = obj.value("Dates").toObject();
+    temp[ds] = statsObject;
+    obj["Dates"] = temp;
+    book[user] = obj;
 
-bool inputOutput::setData(Data k)
-{
-    auto obj =  book.value(k.getuname()).toObject();
-    obj["Age"] = k.getage();
-    obj["Height"] = k.getheight();
-    obj["Sex"] = k.getsex();
-    obj["Weight"] = k.getweight();
-    book[k.getuname()] = obj;
-
-    QJsonDocument content;
-    content.setObject(book);
-    QByteArray bytes = content.toJson(QJsonDocument::Indented);
-    QFile file("./UAuth.json");
-    if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
-        QTextStream istream(&file);
-        istream.setCodec("utf-8");
-        istream << bytes;
-        file.close();
-    }
-    else{
-        qDebug() <<"file open failed\n";
-    }
-    return true;
+    updateFile(book);
 }
 
 bool inputOutput::create_user(Data k)
@@ -61,7 +59,7 @@ bool inputOutput::create_user(Data k)
     if(book.contains(k.getuname())){
         return false;
     }
-    QJsonObject all;
+    QJsonObject all, temp;
     all.insert("Email", k.getemail());
     all.insert("Age", k.getage());
     all.insert("Height", k.getheight());
@@ -69,20 +67,10 @@ bool inputOutput::create_user(Data k)
     all.insert("Weight", k.getweight());
     all.insert("Password", k.getpasswd());
     all.insert("G/L", (k.getgain()) ? "Gain" : "Lose");
+    all["Dates"] = temp;
     book[k.getuname()] = all;
-    QJsonDocument content;
-    content.setObject(book);
-    QByteArray bytes = content.toJson(QJsonDocument::Indented);
-    QFile file("./UAuth.json");
-    if(file.open(QIODevice::WriteOnly | QIODevice::Text)){
-        QTextStream istream(&file);
-        istream.setCodec("utf-8");
-        istream << bytes;
-        file.close();
-    }
-    else{
-        qDebug() <<"file open failed\n";
-    }
+
+    updateFile(book);
     return true;
 }
 
