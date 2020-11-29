@@ -6,6 +6,7 @@ ShowGraphs::ShowGraphs(QWidget *parent) :
     ui(new Ui::ShowGraphs)
 {
     ui->setupUi(this);
+    plot();
 }
 
 ShowGraphs::~ShowGraphs()
@@ -15,4 +16,10 @@ ShowGraphs::~ShowGraphs()
 
 void ShowGraphs::setCurrentUser(QString user){
     currentUser = user;
+}
+
+void ShowGraphs::plot()
+{
+    getallgraph(currentUser);
+    std::cout<< 7;
 }

@@ -27,6 +27,16 @@ void inputOutput::updateFile(QJsonObject Book){
     }
 }
 
+void inputOutput::getallgraph(QString user)
+{
+    user = "kevin";
+    read_users();
+    auto obj =  book.value(user).toObject();
+    auto temp = obj.value("Dates").toObject();
+
+    updateFile(book);
+}
+
 void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     QJsonObject statsObject;
