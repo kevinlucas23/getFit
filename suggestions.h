@@ -13,10 +13,12 @@ class Suggestions : public QMainWindow
 
 public:
     explicit Suggestions(QWidget *parent = nullptr);
+    void setCurrentUser(QString user);
     ~Suggestions();
 
 private:
     Ui::Suggestions *ui;
+    QString currentUser;
 };
 
 #endif // SUGGESTIONS_H

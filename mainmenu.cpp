@@ -31,6 +31,7 @@ void MainMenu::graphSuggest(){
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();
+    sg->setCurrentUser(currentUser);
 }
 
 void MainMenu::dailyExercise(){

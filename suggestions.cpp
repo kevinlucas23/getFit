@@ -12,3 +12,7 @@ Suggestions::~Suggestions()
 {
     delete ui;
 }
+
+void Suggestions::setCurrentUser(QString user){
+    currentUser = user;
+}

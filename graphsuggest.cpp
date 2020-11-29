@@ -13,12 +13,18 @@ GraphSuggest::~GraphSuggest()
     delete ui;
 }
 
+void GraphSuggest::setCurrentUser(QString user){
+    currentUser = user;
+}
+
 void GraphSuggest::showGraphs(){
     ShowGraphs *sg = new ShowGraphs();
     sg->show();
+    sg->setCurrentUser(currentUser);
 }
 
 void GraphSuggest::suggestions(){
     Suggestions *s = new Suggestions();
     s->show();
+    s->setCurrentUser(currentUser);
 }

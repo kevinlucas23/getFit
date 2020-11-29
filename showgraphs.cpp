@@ -12,3 +12,7 @@ ShowGraphs::~ShowGraphs()
 {
     delete ui;
 }
+
+void ShowGraphs::setCurrentUser(QString user){
+    currentUser = user;
+}

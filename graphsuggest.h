@@ -16,6 +16,7 @@ class GraphSuggest : public QMainWindow
 
 public:
     explicit GraphSuggest(QWidget *parent = nullptr);
+    void setCurrentUser(QString user);
     ~GraphSuggest();
 
 private slots:
@@ -24,6 +25,7 @@ private slots:
 
 private:
     Ui::GraphSuggest *ui;
+    QString currentUser;
 };
 
 #endif // GRAPHSUGGEST_H

@@ -13,10 +13,12 @@ class ShowGraphs : public QMainWindow
 
 public:
     explicit ShowGraphs(QWidget *parent = nullptr);
+    void setCurrentUser(QString user);
     ~ShowGraphs();
 
 private:
     Ui::ShowGraphs *ui;
+    QString currentUser;
 };
 
 #endif // SHOWGRAPHS_H
