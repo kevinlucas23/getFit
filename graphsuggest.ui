@@ -40,6 +40,19 @@
      <string>Show Suggestions</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -47,7 +60,7 @@
      <x>0</x>
      <y>0</y>
      <width>348</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -87,9 +100,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>GraphSuggest</receiver>
+   <slot>back()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>42</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>81</x>
+     <y>24</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>showGraphs()</slot>
   <slot>suggestions()</slot>
+  <slot>back()</slot>
  </slots>
 </ui>

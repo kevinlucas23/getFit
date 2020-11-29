@@ -8,7 +8,7 @@ MainMenu::MainMenu(QWidget *parent) :
     ui->setupUi(this);
     uw = new UpdateWeight();
     de = new DailyExercise();
-    s = new Sleep();
+    s = new class Sleep();
     fi = new FoodIntake();
     w = new Weightlifting();
 }

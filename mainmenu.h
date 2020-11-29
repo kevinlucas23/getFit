@@ -42,7 +42,7 @@ private:
     DailyExercise *de;
     FoodIntake *fi;
     Weightlifting *w;
-    Sleep *s;
+    class Sleep *s;
 
 private slots:
     void dailyExercise();

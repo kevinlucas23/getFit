@@ -22,6 +22,7 @@ public:
 private slots:
     void showGraphs();
     void suggestions();
+    void back();
 
 private:
     Ui::GraphSuggest *ui;
