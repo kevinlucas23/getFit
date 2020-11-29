@@ -25,9 +25,8 @@ void MainMenu::setCurrentUser(QString user){
 
 void MainMenu::graphSuggest(){
     // Format should be like this
-    // "Dates": {"11/28/20": {"weight": 171, "exerciseMinutes": 40, "calories": 3000}, "11/29/20": {"weight": 172, "exerciseMinutes": 30, "calories": 3100}}
-    // modify addData to add the data to the json file
-    addData();
+    // "Dates": {"11/28/20": {"weight": 171, "sleep": 8, "cals": 3000, "food": {"carbs": 900, "proteins": 400, "fv": 300, "dairy": 500}}}
+    addData(weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy);
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();

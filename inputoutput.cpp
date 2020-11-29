@@ -9,7 +9,10 @@ Data inputOutput::getData(){
     return user;
 }
 
-void inputOutput::addData(){
+void inputOutput::addData(int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
+    // Kevin I need you to add these into the json file in this format
+    // "Dates": {"11/28/20": {"weight": weight, "sleep": , "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
+    /*
     QFile file("UAuth.json");
     QJsonDocument jsonOrg = QJsonDocument::fromJson(file.readAll());
     file.close();
@@ -25,6 +28,7 @@ void inputOutput::addData(){
     QJsonDocument doc( arrLog );
     file.write(doc.toJson());
     file.close();
+    */
 }
 
 bool inputOutput::setData(Data k)

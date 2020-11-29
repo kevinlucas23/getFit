@@ -61,7 +61,7 @@ public:
     bool create_user(Data k);
     bool setData(Data k);
     void read_users();
-    void addData();
+    void addData(int, int, int, int, int, int, int);
     Data getData();
     bool check_user(QString kev, QString pass);
     QJsonObject getBook();
