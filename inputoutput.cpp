@@ -41,7 +41,6 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     foodObject.insert("dairy", dairy);
     statsObject.insert("food", foodObject);
 
-//    QJsonObject dateObject;
     QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
 
     read_users();
