@@ -9,26 +9,26 @@ Data inputOutput::getData(){
     return user;
 }
 
-void inputOutput::addData(int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
-    // Kevin I need you to add these into the json file in this format
-    // "Dates": {"11/28/20": {"weight": weight, "sleep": , "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
-    /*
-    QFile file("UAuth.json");
-    QJsonDocument jsonOrg = QJsonDocument::fromJson(file.readAll());
-    file.close();
-    QJsonObject projectDetails = { {"weight", 175},
-                                   {"calories", 3000},
-                                   {"exercise", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )} };
+void inputOutput::addData(QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
+    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
+    QJsonObject statsObject;
+    statsObject.insert("weight", QJsonValue::fromVariant(weight));
+    statsObject.insert("cals", QJsonValue::fromVariant(cals));
+    statsObject.insert("sleep", QJsonValue::fromVariant(sleep));
 
-    QJsonObject notificationObj =  {{ "Notifications", projectDetails }};
+    QJsonObject foodObject;
+    foodObject.insert("carbs", carbs);
+    foodObject.insert("proteins", proteins);
+    foodObject.insert("fv", fv);
+    foodObject.insert("dairy", dairy);
+    statsObject.insert("food", foodObject);
 
-    QJsonArray arrLog = jsonOrg.array();
-    arrLog.push_back( notificationObj );
+    QJsonObject dateObject;
+    QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
+    dateObject.insert(ds, statsObject);
 
-    QJsonDocument doc( arrLog );
-    file.write(doc.toJson());
-    file.close();
-    */
+    QJsonDocument doc(dateObject);
+    qDebug() << doc.toJson();
 }
 
 bool inputOutput::setData(Data k)
