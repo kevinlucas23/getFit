@@ -2,20 +2,24 @@
 #define MAINMENU_H
 
 #include <QMainWindow>
+#include <QFile>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
 
-#include "caloriegoal.h"
 #include "dailyexercise.h"
 #include "foodintake.h"
 #include "graphsuggest.h"
 #include "updateweight.h"
 #include "weightlifting.h"
 #include "sleep.h"
+#include "inputoutput.h"
 
 namespace Ui {
 class MainMenu;
 }
 
-class MainMenu : public QMainWindow
+class MainMenu : public QMainWindow, public inputOutput
 {
     Q_OBJECT
 
@@ -27,15 +31,30 @@ public:
 private:
     Ui::MainMenu *ui;
     QString currentUser;
+    int weight;
+    int cals;
+    int sleepTime;
+    int carbs;
+    int proteins;
+    int fruits_veg;
+    int dairy;
+    UpdateWeight *uw;
+    DailyExercise *de;
+    FoodIntake *fi;
+    Weightlifting *w;
+    Sleep *s;
 
 private slots:
-    void calorieGoal();
     void dailyExercise();
     void foodIntake();
     void updateWeight();
     void weightlifting();
     void sleep();
     void graphSuggest();
+    void setWeight(int w);
+    void setSleep(int sl);
+    void setDailyExercise(int e);
+    void setFoodIntake(int c, int p, int fv, int d);
 };
 
 #endif // MAINMENU_H

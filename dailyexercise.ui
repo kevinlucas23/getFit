@@ -6,426 +6,50 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>332</height>
+    <width>436</width>
+    <height>144</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>290</y>
-     <width>171</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>-1</x>
-     <y>39</y>
-     <width>201</width>
-     <height>212</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Enter specific exercise:</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QComboBox" name="comboBox">
-      <item>
-       <property name="text">
-        <string>football</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>basketball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>baseball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>soccer</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>hockey</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>lacrosse</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>running</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>walking</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>weightlifting</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>swimming</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>volleyball</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Enter specific exercise:</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QComboBox" name="comboBox_2">
-      <item>
-       <property name="text">
-        <string>football</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>basketball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>baseball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>soccer</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>hockey</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>lacrosse</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>running</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>walking</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>weightlifting</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>swimming</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>volleyball</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Enter specific exercise:</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-     <widget class="QComboBox" name="comboBox_3">
-      <item>
-       <property name="text">
-        <string>football</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>basketball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>baseball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>soccer</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>hockey</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>lacrosse</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>running</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>walking</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>weightlifting</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>swimming</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>volleyball</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Enter specific exercise:</string>
-      </property>
-     </widget>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QComboBox" name="comboBox_4">
-      <item>
-       <property name="text">
-        <string>football</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>basketball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>baseball</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>soccer</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>hockey</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>lacrosse</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>running</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>walking</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>weightlifting</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>swimming</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>volleyball</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="verticalLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>40</y>
-     <width>201</width>
-     <height>216</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_2">
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>Enter time in minutes:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="spinBox"/>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>Enter time in minutes:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="spinBox_2"/>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Enter time in minutes:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="spinBox_3"/>
-    </item>
-    <item alignment="Qt::AlignHCenter">
-     <widget class="QLabel" name="label_8">
-      <property name="text">
-       <string>Enter time in minutes:</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QSpinBox" name="spinBox_4"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>10</y>
-     <width>231</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Enter up to 4 different exercises:</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>290</y>
-     <width>201</width>
-     <height>31</height>
+     <y>20</y>
+     <width>421</width>
+     <height>17</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_10">
-      <property name="text">
-       <string>Current Date: </string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QDateEdit" name="dateEdit"/>
-    </item>
-   </layout>
+   <property name="text">
+    <string>Enter the amount of calories burned doing various exercises:</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="calories">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>50</y>
+     <width>291</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>90</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DONE</string>
+   </property>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>DailyExercise</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>DailyExercise</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

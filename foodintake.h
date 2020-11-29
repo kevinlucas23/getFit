@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::FoodIntake *ui;
+
+signals:
+    void end(int, int, int, int);
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // FOODINTAKE_H

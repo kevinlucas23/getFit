@@ -13,3 +13,8 @@ UpdateWeight::~UpdateWeight()
 {
     delete ui;
 }
+
+void UpdateWeight::on_pushButton_clicked()
+{
+    emit(end(ui->currentWeight->value()));
+}

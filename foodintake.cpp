@@ -12,3 +12,8 @@ FoodIntake::~FoodIntake()
 {
     delete ui;
 }
+
+void FoodIntake::on_pushButton_clicked()
+{
+    emit(end(ui->carbs->value(), ui->proteins->value(), ui->fruits_veg->value(), ui->dairy->value()));
+}

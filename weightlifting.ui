@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>527</width>
+    <width>667</width>
     <height>305</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
     <rect>
      <x>10</x>
      <y>40</y>
-     <width>131</width>
+     <width>271</width>
      <height>211</height>
     </rect>
    </property>
@@ -381,7 +381,7 @@
   <widget class="QWidget" name="verticalLayoutWidget_2">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>290</x>
      <y>40</y>
      <width>121</width>
      <height>211</height>
@@ -418,7 +418,7 @@
   <widget class="QWidget" name="verticalLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>420</x>
      <y>40</y>
      <width>111</width>
      <height>211</height>
@@ -455,7 +455,7 @@
   <widget class="QWidget" name="verticalLayoutWidget_4">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>540</x>
      <y>40</y>
      <width>111</width>
      <height>211</height>
@@ -510,28 +510,6 @@
        <number>1000</number>
       </property>
      </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>260</y>
-     <width>201</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Current Date: </string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QDateEdit" name="dateEdit"/>
     </item>
    </layout>
   </widget>

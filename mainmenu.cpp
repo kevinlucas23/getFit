@@ -6,6 +6,11 @@ MainMenu::MainMenu(QWidget *parent) :
     ui(new Ui::MainMenu)
 {
     ui->setupUi(this);
+    uw = new UpdateWeight();
+    de = new DailyExercise();
+    s = new Sleep();
+    fi = new FoodIntake();
+    w = new Weightlifting();
 }
 
 MainMenu::~MainMenu()
@@ -19,44 +24,66 @@ void MainMenu::setCurrentUser(QString user){
 }
 
 void MainMenu::graphSuggest(){
-    // add stuff to json file
+    // Format should be like this
+    // "Dates": {"11/28/20": {"weight": 171, "exerciseMinutes": 40, "calories": 3000}, "11/29/20": {"weight": 172, "exerciseMinutes": 30, "calories": 3100}}
+    // modify addData to add the data to the json file
+    addData();
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();
 }
 
-void MainMenu::calorieGoal(){
-    CalorieGoal cg;
-    cg.setModal(true);
-    cg.exec();
-}
-
 void MainMenu::dailyExercise(){
-    DailyExercise de;
-    de.setModal(true);
-    de.exec();
-}
-
-void MainMenu::foodIntake(){
-    FoodIntake fi;
-    fi.setModal(true);
-    fi.exec();
+    connect(de, SIGNAL(end(int)), this, SLOT(setDailyExercise(int)));
+    de->show();
 }
 
 void MainMenu::updateWeight(){
-    UpdateWeight uw;
-    uw.setModal(true);
-    uw.exec();
-}
-
-void MainMenu::weightlifting(){
-    Weightlifting w;
-    w.setModal(true);
-    w.exec();
+    connect(uw, SIGNAL(end(int)), this, SLOT(setWeight(int)));
+    uw->show();
 }
 
 void MainMenu::sleep(){
-    Sleep s;
-    s.setModal(true);
-    s.exec();
+    connect(s, SIGNAL(end(int)), this, SLOT(setSleep(int)));
+    s->show();
+}
+
+void MainMenu::foodIntake(){
+    connect(fi, SIGNAL(end(int, int, int, int)), this, SLOT(setFoodIntake(int, int, int, int)));
+    fi->show();
+}
+
+void MainMenu::weightlifting(){
+    connect(w, SIGNAL(end(int)), this, SLOT(setWeightLifting(int)));
+    w->show();
+}
+
+void MainMenu::setWeight(int w){
+    weight = w;
+    uw->hide();
+    qDebug() << weight;
+}
+
+void MainMenu::setDailyExercise(int e){
+    cals = e;
+    de->hide();
+    qDebug() << cals;
+}
+
+void MainMenu::setSleep(int sl){
+    sleepTime = sl;
+    s->hide();
+    qDebug() << sleepTime;
+}
+
+void MainMenu::setFoodIntake(int c, int p, int fv, int d){
+    carbs = c;
+    proteins = p;
+    fruits_veg = fv;
+    dairy = d;
+    qDebug() << c;
+    qDebug() << p;
+    qDebug() << fv;
+    qDebug() << d;
+    fi->hide();
 }

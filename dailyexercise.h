@@ -15,6 +15,12 @@ public:
     explicit DailyExercise(QWidget *parent = nullptr);
     ~DailyExercise();
 
+private slots:
+    void on_pushButton_clicked();
+
+signals:
+    void end(int);
+
 private:
     Ui::DailyExercise *ui;
 };

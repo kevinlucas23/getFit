@@ -12,3 +12,8 @@ DailyExercise::~DailyExercise()
 {
     delete ui;
 }
+
+void DailyExercise::on_pushButton_clicked()
+{
+    emit(end(ui->calories->value()));
+}

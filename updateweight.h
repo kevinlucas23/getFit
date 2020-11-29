@@ -17,6 +17,12 @@ public:
 
 private:
     Ui::UpdateWeight *ui;
+
+signals:
+    void end(int);
+
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // UPDATEWEIGHT_H

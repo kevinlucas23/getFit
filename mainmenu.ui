@@ -19,7 +19,7 @@
      <rect>
       <x>0</x>
       <y>100</y>
-      <width>910</width>
+      <width>921</width>
       <height>111</height>
      </rect>
     </property>
@@ -104,44 +104,15 @@
        </property>
       </spacer>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_7">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Enter Weightlifting Exercise</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_4">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>10</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>240</y>
-      <width>911</width>
-      <height>121</height>
+      <y>210</y>
+      <width>921</width>
+      <height>111</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -191,35 +162,6 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_5">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>Enter Calorie Consumption Goal</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="horizontalSpacer_8">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>10</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
       <widget class="QPushButton" name="pushButton_8">
        <property name="minimumSize">
         <size>
@@ -233,7 +175,7 @@
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_3">
+      <spacer name="horizontalSpacer_8">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -279,7 +221,7 @@
    <widget class="QDialogButtonBox" name="buttonBox">
     <property name="geometry">
      <rect>
-      <x>395</x>
+      <x>750</x>
       <y>420</y>
       <width>161</width>
       <height>25</height>
@@ -289,17 +231,59 @@
      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QDateEdit" name="dateEdit">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>390</y>
-      <width>261</width>
+      <x>570</x>
+      <y>420</y>
+      <width>110</width>
+      <height>26</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>420</y>
+      <width>291</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Enter the date you want to input data for:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>350</y>
+      <width>211</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Enter Weightlifting Exercise</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>330</y>
+      <width>67</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Click OK if you are done entering data!</string>
+     <string>Optional:</string>
     </property>
    </widget>
   </widget>
@@ -334,30 +318,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_5</sender>
-   <signal>clicked()</signal>
-   <receiver>MainMenu</receiver>
-   <slot>calorieGoal()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>405</x>
-     <y>309</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>458</x>
-     <y>241</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
    <receiver>MainMenu</receiver>
    <slot>foodIntake()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>403</x>
-     <y>189</y>
+     <x>880</x>
+     <y>216</y>
     </hint>
     <hint type="destinationlabel">
      <x>522</x>
@@ -388,8 +356,8 @@
    <slot>weightlifting()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>882</x>
-     <y>194</y>
+     <x>240</x>
+     <y>466</y>
     </hint>
     <hint type="destinationlabel">
      <x>664</x>
@@ -420,12 +388,28 @@
    <slot>graphSuggest()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>511</x>
-     <y>453</y>
+     <x>826</x>
+     <y>466</y>
     </hint>
     <hint type="destinationlabel">
      <x>653</x>
      <y>444</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>MainMenu</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>764</x>
+     <y>456</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>689</x>
+     <y>459</y>
     </hint>
    </hints>
   </connection>

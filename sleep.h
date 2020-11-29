@@ -17,6 +17,11 @@ public:
 
 private:
     Ui::Sleep *ui;
+
+signals:
+    void end(int);
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // SLEEP_H

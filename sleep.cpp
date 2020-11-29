@@ -12,3 +12,8 @@ Sleep::~Sleep()
 {
     delete ui;
 }
+
+void Sleep::on_pushButton_clicked()
+{
+    emit(end(ui->sleep->value()));
+}

@@ -9,7 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    caloriegoal.cpp \
     dailyexercise.cpp \
     foodintake.cpp \
     graphsuggest.cpp \
@@ -17,7 +16,6 @@ SOURCES += \
     main.cpp \
     getfit.cpp \
     mainmenu.cpp \
-    menu.cpp \
     showgraphs.cpp \
     sleep.cpp \
     suggestions.cpp \
@@ -26,14 +24,12 @@ SOURCES += \
     weightlifting.cpp
 
 HEADERS += \
-    caloriegoal.h \
     dailyexercise.h \
     foodintake.h \
     getfit.h \
     graphsuggest.h \
     inputoutput.h \
     mainmenu.h \
-    menu.h \
     showgraphs.h \
     sleep.h \
     suggestions.h \
@@ -42,13 +38,11 @@ HEADERS += \
     weightlifting.h
 
 FORMS += \
-    caloriegoal.ui \
     dailyexercise.ui \
     foodintake.ui \
     getfit.ui \
     graphsuggest.ui \
     mainmenu.ui \
-    menu.ui \
     showgraphs.ui \
     sleep.ui \
     suggestions.ui \

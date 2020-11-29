@@ -9,6 +9,24 @@ Data inputOutput::getData(){
     return user;
 }
 
+void inputOutput::addData(){
+    QFile file("UAuth.json");
+    QJsonDocument jsonOrg = QJsonDocument::fromJson(file.readAll());
+    file.close();
+    QJsonObject projectDetails = { {"weight", 175},
+                                   {"calories", 3000},
+                                   {"exercise", QDateTime::currentDateTime().toString( "yyyy-MM-dd hh:mm:ss" )} };
+
+    QJsonObject notificationObj =  {{ "Notifications", projectDetails }};
+
+    QJsonArray arrLog = jsonOrg.array();
+    arrLog.push_back( notificationObj );
+
+    QJsonDocument doc( arrLog );
+    file.write(doc.toJson());
+    file.close();
+}
+
 bool inputOutput::setData(Data k)
 {
     auto obj =  book.value(k.getuname()).toObject();
