@@ -26,9 +26,15 @@ void MainMenu::setCurrentUser(QString user){
 }
 
 void MainMenu::graphSuggest(){
-    // Format should be like this
     // "Dates": {"11/28/20": {"weight": 171, "sleep": 8, "cals": 3000, "food": {"carbs": 900, "proteins": 400, "fv": 300, "dairy": 500}}}
     addData(currentUser, ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy);
+    this->hide();
+    GraphSuggest *sg = new GraphSuggest();
+    sg->show();
+    sg->setCurrentUser(currentUser);
+}
+
+void MainMenu::noData(){
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();
@@ -67,22 +73,44 @@ void MainMenu::setWeight(int w){
 }
 
 void MainMenu::setDailyExercise(int e){
-    cals = e;
+    if(e >= 0 && e < 10000){
+        cals = e;
+    }
+    else{
+        cals = 0;
+    }
     de->hide();
     qDebug() << cals;
 }
 
 void MainMenu::setSleep(int sl){
-    sleepTime = sl;
+    if(sl >= 0 && sl < 25){
+        sleepTime = sl;
+    }
+    else{
+        sleepTime = 0;
+    }
     s->hide();
     qDebug() << sleepTime;
 }
 
 void MainMenu::setFoodIntake(int c, int p, int fv, int d){
-    carbs = c;
-    proteins = p;
-    fruits_veg = fv;
-    dairy = d;
+    carbs = 0;
+    proteins = 0;
+    fruits_veg = 0;
+    dairy = 0;
+    if(c >= 0 && c < 10000){
+        carbs = c;
+    }
+    if(p >= 0 && p < 10000){
+        proteins = p;
+    }
+    if(fv >= 0 && fv < 10000){
+        fruits_veg = fv;
+    }
+    if(d >= 0 && d < 10000){
+        dairy = d;
+    }
     qDebug() << c;
     qDebug() << p;
     qDebug() << fv;
