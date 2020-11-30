@@ -31,7 +31,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QSpinBox" name="sleep"/>
+     <widget class="QSpinBox" name="sleep">
+      <property name="maximum">
+       <number>24</number>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
