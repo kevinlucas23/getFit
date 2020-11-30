@@ -6,7 +6,7 @@ ShowGraphs::ShowGraphs(QWidget *parent) :
     ui(new Ui::ShowGraphs)
 {
     ui->setupUi(this);
-    plot();
+//    plot();
 }
 
 ShowGraphs::~ShowGraphs()

@@ -29,12 +29,21 @@ void inputOutput::updateFile(QJsonObject Book){
 
 void inputOutput::getallgraph(QString user)
 {
-    user = "kevin";
+//    user = "kevin";
     read_users();
     auto obj =  book.value(user).toObject();
     auto temp = obj.value("Dates").toObject();
 
     updateFile(book);
+}
+
+bool inputOutput::isGL(QString user)
+{
+    read_users();
+    auto obj =  book.value(user).toObject();
+    auto temp = obj["G/L"];
+
+    return (temp == "Gain") ? true : false;
 }
 
 void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){

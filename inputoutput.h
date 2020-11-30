@@ -64,6 +64,7 @@ public:
     Data getData();
     void updateFile(QJsonObject Book);
     void getallgraph(QString user);
+    bool isGL(QString user);
     bool check_user(QString kev, QString pass);
     QJsonObject getBook();
 

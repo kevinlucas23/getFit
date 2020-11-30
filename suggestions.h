@@ -2,12 +2,13 @@
 #define SUGGESTIONS_H
 
 #include <QMainWindow>
+#include "inputoutput.h"
 
 namespace Ui {
 class Suggestions;
 }
 
-class Suggestions : public QMainWindow
+class Suggestions : public QMainWindow, public inputOutput
 {
     Q_OBJECT
 
