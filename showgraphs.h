@@ -26,6 +26,7 @@ public:
 private:
     Ui::ShowGraphs *ui;
     QString currentUser;
+    QMap<QString, int> map;
 };
 
 #endif // SHOWGRAPHS_H

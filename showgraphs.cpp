@@ -20,7 +20,8 @@ void ShowGraphs::setCurrentUser(QString user){
 
 void ShowGraphs::plot()
 {
-    getallgraph(currentUser);
+//     user, QMap<QString, int> map, QString what);
+    getallgraph(currentUser, map, "cals");
     plotWeight();
     plotCals();
     plotExercise();

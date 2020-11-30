@@ -12,7 +12,7 @@
 #include <QtDebug>
 #include <QFileInfo>
 #include <QJsonArray>
-
+#include <QMap>
 
 struct Data{
     QString email;
@@ -63,7 +63,7 @@ public:
     void addData(QString user, QDate, int, int, int, int, int, int, int);
     Data getData();
     void updateFile(QJsonObject Book);
-    void getallgraph(QString user);
+    void getallgraph(QString user, QMap<QString, int> map, QString what);
     bool isGL(QString user);
     bool check_user(QString kev, QString pass);
     QJsonObject getBook();

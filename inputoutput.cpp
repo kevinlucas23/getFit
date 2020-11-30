@@ -27,7 +27,7 @@ void inputOutput::updateFile(QJsonObject Book){
     }
 }
 
-void inputOutput::getallgraph(QString user)
+void inputOutput::getallgraph(QString user, QMap<QString, int> map, QString what)
 {
 //    user = "kevin";
     read_users();
