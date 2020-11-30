@@ -6,6 +6,11 @@ FoodIntake::FoodIntake(QWidget *parent) :
     ui(new Ui::FoodIntake)
 {
     ui->setupUi(this);
+    ui->carbs->setRange(0,5000);
+    ui->proteins->setRange(0,5000);
+    ui->dairy->setRange(0,5000);
+    ui->fruits_veg->setRange(0,1000);
+
 }
 
 FoodIntake::~FoodIntake()
