@@ -6,7 +6,6 @@ ShowGraphs::ShowGraphs(QWidget *parent) :
     ui(new Ui::ShowGraphs)
 {
     ui->setupUi(this);
-    plot();
 }
 
 ShowGraphs::~ShowGraphs()
@@ -16,12 +15,14 @@ ShowGraphs::~ShowGraphs()
 
 void ShowGraphs::setCurrentUser(QString user){
     currentUser = user;
+    plot();
 }
 
 void ShowGraphs::plot()
 {
 //     user, QMap<QString, int> map, QString what);
     getallgraph(currentUser, map, "cals");
+    qDebug() << "currentUser: " << currentUser;
     plotWeight();
     plotCals();
     plotExercise();
