@@ -6,7 +6,13 @@ Suggestions::Suggestions(QWidget *parent) :
     ui(new Ui::Suggestions)
 {
     ui->setupUi(this);
-    ui->title->setText("Weight Loss Food Tips");
+    if(inputOutput::isGL(currentUser)){
+        ui->title->setText("Weight Gain Food Suggestions");
+    }
+    else{
+        ui->title->setText("Weight Loss Food Suggestions");
+    }
+
     QPixmap theScale("../getFit/scale.png");
     int w = ui->scalePic->width();
     int h = ui->scalePic->height();
