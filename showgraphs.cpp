@@ -21,12 +21,16 @@ void ShowGraphs::setCurrentUser(QString user){
 void ShowGraphs::plot()
 {
 //     user, QMap<QString, int> map, QString what);
-    getallgraph(currentUser, map, "cals");
-    qDebug() << "currentUser: " << currentUser;
-    plotWeight();
+    getallgraph(currentUser, &map, "cals");
     plotCals();
-    plotExercise();
+    map.clear();
+    getallgraph(currentUser, &map, "weight");
+    plotWeight();
+    map.clear();
+    getallgraph(currentUser, &map, "sleep");
     plotSleep();
+    map.clear();
+    plotExercise();
 }
 
 void ShowGraphs::plotWeight(){

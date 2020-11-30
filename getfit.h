@@ -26,6 +26,8 @@ private slots:
 
     void on_button_s_clicked();
 
+    void on_passw_sign_returnPressed();
+
 private:
     Ui::getFit *ui;
 };

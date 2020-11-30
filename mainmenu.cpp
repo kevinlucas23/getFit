@@ -11,6 +11,8 @@ MainMenu::MainMenu(QWidget *parent) :
     s = new class Sleep();
     fi = new FoodIntake();
     w = new Weightlifting();
+    auto date = QDate::currentDate();
+    ui->dateEdit->setDate(date);
 }
 
 MainMenu::~MainMenu()

@@ -27,14 +27,33 @@ void inputOutput::updateFile(QJsonObject Book){
     }
 }
 
-void inputOutput::getallgraph(QString user, QMap<QString, int> map, QString what)
+void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QString what)
 {
 //    user = "kevin";
+    QMap<QString, int> map;
     read_users();
     auto obj =  book.value(user).toObject();
-    auto temp = obj.value("Dates").toObject();
+    if(what == "weight"){
+        auto b = obj.value("sign_in").toString();
+        auto c = obj.value("Weight").toInt();
+        map[b] = c;
+    }
 
-    updateFile(book);
+    auto temp = obj.value("Dates").toObject();
+    QStringList keys = temp.keys();
+    for(auto key : keys){
+        auto data = temp.value(key).toObject();
+        QStringList inside = data.keys();
+        for(auto a : inside){
+            if(a == what){
+                auto value = data.value(a).toInt();
+                map[key] = value;
+                break;
+            }
+        }
+    }
+    *op = map;
+//    updateFile(book);
 }
 
 bool inputOutput::isGL(QString user)
@@ -49,6 +68,11 @@ bool inputOutput::isGL(QString user)
 
 void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
+    read_users();
+    auto obj =  book.value(user).toObject();
+    auto a = obj.value("Weight").toInt();
+    if(weight == 0 || weight == -1)
+        weight = a;
     QJsonObject statsObject;
     statsObject.insert("weight", QJsonValue::fromVariant(weight));
     statsObject.insert("cals", QJsonValue::fromVariant(cals));
@@ -63,8 +87,7 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
 
     QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
 
-    read_users();
-    auto obj =  book.value(user).toObject();
+
     auto temp = obj.value("Dates").toObject();
     temp[ds] = statsObject;
     obj["Dates"] = temp;
@@ -86,6 +109,10 @@ bool inputOutput::create_user(Data k)
     all.insert("Weight", k.getweight());
     all.insert("Password", k.getpasswd());
     all.insert("G/L", (k.getgain()) ? "Gain" : "Lose");
+
+    auto date = QDate::currentDate();
+    QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
+    all.insert("sign_in", ds);
     all["Dates"] = temp;
     book[k.getuname()] = all;
 

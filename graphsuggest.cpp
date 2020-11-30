@@ -29,7 +29,6 @@ void GraphSuggest::showGraphs(){
     ShowGraphs *sg = new ShowGraphs();
     sg->show();
     sg->setCurrentUser(currentUser);
-    qDebug() << currentUser;
 }
 
 void GraphSuggest::suggestions(){

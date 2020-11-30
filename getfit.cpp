@@ -76,3 +76,8 @@ void getFit::on_button_s_clicked()
     ui->passw_sign->setEchoMode(QLineEdit::Normal);
     return;
 }
+
+void getFit::on_passw_sign_returnPressed()
+{
+    on_push_signin_clicked();
+}
