@@ -6,21 +6,51 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1173</width>
+    <height>661</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QChartView" name="plot">
+   <widget class="QChartView" name="weightPlot">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
-      <width>681</width>
-      <height>221</height>
+      <y>10</y>
+      <width>571</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QChartView" name="exercisePlot">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>571</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QChartView" name="caloriePlot">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>10</y>
+      <width>571</width>
+      <height>301</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QChartView" name="sleepPlot">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>320</y>
+      <width>571</width>
+      <height>301</height>
      </rect>
     </property>
    </widget>
@@ -30,7 +60,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1173</width>
      <height>22</height>
     </rect>
    </property>

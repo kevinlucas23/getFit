@@ -17,6 +17,10 @@ public:
     explicit ShowGraphs(QWidget *parent = nullptr);
     void setCurrentUser(QString user);
     void plot();
+    void plotWeight();
+    void plotSleep();
+    void plotExercise();
+    void plotCals();
     ~ShowGraphs();
 
 private:
