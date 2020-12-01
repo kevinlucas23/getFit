@@ -27,6 +27,7 @@ private:
     Ui::ShowGraphs *ui;
     QString currentUser;
     QMap<QString, int> map;
+    QMap<QString, QVector<int>> food_map;
 };
 
 #endif // SHOWGRAPHS_H

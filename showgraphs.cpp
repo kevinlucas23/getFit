@@ -21,16 +21,19 @@ void ShowGraphs::setCurrentUser(QString user){
 void ShowGraphs::plot()
 {
 //     user, QMap<QString, int> map, QString what);
-    getallgraph(currentUser, &map, "cals");
+    getallgraph(currentUser, &map, &food_map, "cals");
     plotExercise();
     map.clear();
-    getallgraph(currentUser, &map, "weight");
+    getallgraph(currentUser, &map, &food_map, "weight");
     plotWeight();
     map.clear();
-    getallgraph(currentUser, &map, "sleep");
+    getallgraph(currentUser, &map, &food_map, "sleep");
     plotSleep();
     map.clear();
+    getallgraph(currentUser, &map, &food_map, "food");
     plotCals();
+    food_map.clear();
+
 }
 
 void ShowGraphs::plotWeight(){

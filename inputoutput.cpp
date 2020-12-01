@@ -27,10 +27,11 @@ void inputOutput::updateFile(QJsonObject Book){
     }
 }
 
-void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QString what)
+void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QMap<QString, QVector<int>>* po, QString what)
 {
 //    user = "kevin";
     QMap<QString, int> map;
+    QMap<QString, QVector<int>> map2;
     read_users();
     auto obj =  book.value(user).toObject();
     if(what == "weight"){
@@ -45,14 +46,24 @@ void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QString what
         auto data = temp.value(key).toObject();
         QStringList inside = data.keys();
         for(auto a : inside){
-            if(a == what){
+            if(a == what && a != "food"){
                 auto value = data.value(a).toInt();
                 map[key] = value;
-                break;
+            }
+            if(a == what && a == "food"){
+                auto k = data.value(a).toObject();
+                QStringList l = k.keys();
+                QVector<int> q;
+                for(auto u : l){
+                    auto t = k.value(u).toInt();
+                    q.push_back(t);
+                }
+                map2[key] = q;
             }
         }
     }
     *op = map;
+    *po = map2;
 //    updateFile(book);
 }
 
