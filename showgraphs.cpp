@@ -22,7 +22,7 @@ void ShowGraphs::plot()
 {
 //     user, QMap<QString, int> map, QString what);
     getallgraph(currentUser, &map, "cals");
-    plotCals();
+    plotExercise();
     map.clear();
     getallgraph(currentUser, &map, "weight");
     plotWeight();
@@ -30,28 +30,36 @@ void ShowGraphs::plot()
     getallgraph(currentUser, &map, "sleep");
     plotSleep();
     map.clear();
-    plotExercise();
+    plotCals();
 }
 
 void ShowGraphs::plotWeight(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
-    for(int i = 0; i < 10; i++){
-        *series << QPointF(i, 0.5*i);
-    }
+    series->setName("lbs");
+    QMap<QString, int>::iterator it;
 
+    int x = 0;
+    int max = 0;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
+        }
+        x++;
+    }
     c->addSeries(series);
     c->setAnimationOptions(QChart::SeriesAnimations);
 
     QValueAxis *axisY = new QValueAxis();
-    axisY->setTitleText("Weight");
-    axisY->setRange(0,5);
+    axisY->setTitleText("Weight(lb)");
+    axisY->setRange(0, max + 20);
     c->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0,9);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -65,22 +73,31 @@ void ShowGraphs::plotWeight(){
 void ShowGraphs::plotSleep(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
-    for(int i = 0; i < 10; i++){
-        *series << QPointF(i, 0.5*i);
+    series->setName("hours");
+    QMap<QString, int>::iterator it;
+
+    int x = 0;
+    int max = 0;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
+        }
+        x++;
     }
 
     c->addSeries(series);
     c->setAnimationOptions(QChart::SeriesAnimations);
 
     QValueAxis *axisY = new QValueAxis();
-    axisY->setTitleText("Sleep");
-    axisY->setRange(0,5);
+    axisY->setTitleText("Sleep(hrs)");
+    axisY->setRange(0,24);
     c->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0,9);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -94,8 +111,17 @@ void ShowGraphs::plotSleep(){
 void ShowGraphs::plotExercise(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
-    for(int i = 0; i < 10; i++){
-        *series << QPointF(i, 0.5*i);
+    series->setName("Calories");
+    QMap<QString, int>::iterator it;
+
+    int x = 0;
+    int max = 0;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
+        }
+        x++;
     }
 
     c->addSeries(series);
@@ -103,13 +129,13 @@ void ShowGraphs::plotExercise(){
 
     QValueAxis *axisY = new QValueAxis();
     axisY->setTitleText("Calories Burned");
-    axisY->setRange(0,5);
+    axisY->setRange(0, max + 20);
     c->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0,9);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -123,8 +149,17 @@ void ShowGraphs::plotExercise(){
 void ShowGraphs::plotCals(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
-    for(int i = 0; i < 10; i++){
-        *series << QPointF(i, 0.5*i);
+    series->setName("Calories");
+    QMap<QString, int>::iterator it;
+
+    int x = 0;
+    int max = 0;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
+        }
+        x++;
     }
 
     c->addSeries(series);
@@ -132,13 +167,13 @@ void ShowGraphs::plotCals(){
 
     QValueAxis *axisY = new QValueAxis();
     axisY->setTitleText("Calories Consumed");
-    axisY->setRange(0,5);
+    axisY->setRange(0, max + 20);
     c->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0,9);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 

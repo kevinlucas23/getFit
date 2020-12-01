@@ -85,9 +85,7 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     foodObject.insert("dairy", dairy);
     statsObject.insert("food", foodObject);
 
-    QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
-
-
+    QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     auto temp = obj.value("Dates").toObject();
     temp[ds] = statsObject;
     obj["Dates"] = temp;
@@ -111,7 +109,7 @@ bool inputOutput::create_user(Data k)
     all.insert("G/L", (k.getgain()) ? "Gain" : "Lose");
 
     auto date = QDate::currentDate();
-    QString ds = QString::number(date.day()) + "/" + QString::number(date.month()) + "/" + QString::number(date.year());
+    QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     all.insert("sign_in", ds);
     all["Dates"] = temp;
     book[k.getuname()] = all;
