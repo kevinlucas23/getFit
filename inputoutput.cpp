@@ -61,7 +61,7 @@ bool inputOutput::isGL(QString user)
     read_users();
     auto obj =  book.value(user).toObject();
     auto temp = obj["G/L"];
-    qDebug() << temp;
+    //qDebug() << temp;
 
     return (temp == "Gain") ? true : false;
 }

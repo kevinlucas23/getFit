@@ -23,12 +23,14 @@ GraphSuggest::~GraphSuggest()
 
 void GraphSuggest::setCurrentUser(QString user){
     currentUser = user;
+
 }
 
 void GraphSuggest::showGraphs(){
     ShowGraphs *sg = new ShowGraphs();
-    sg->show();
     sg->setCurrentUser(currentUser);
+    sg->show();
+
 }
 
 void GraphSuggest::suggestions(){

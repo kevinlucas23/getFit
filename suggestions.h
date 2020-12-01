@@ -20,6 +20,9 @@ public:
 private:
     Ui::Suggestions *ui;
     QString currentUser;
+private slots:
+    void liftPage();
+    void sleepPage();
 };
 
 #endif // SUGGESTIONS_H
