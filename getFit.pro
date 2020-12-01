@@ -62,7 +62,24 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
+    Greens.png \
     UAuth.json \
+    beans.png \
+    bench.png \
+    chicken.png \
+    deadlift.png \
+    milk.png \
+    nuts.png \
     pic.jpg \
+    pic1.jpg \
     pic2.jpg \
-    pic3.jpg
+    pic3.jpg \
+    potatoes.png \
+    rice.png \
+    salmon.png \
+    scale.png \
+    sleep.png \
+    sleep2.png \
+    squat.png \
+    tuna.png \
+    yogurt.png
