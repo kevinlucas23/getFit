@@ -8,6 +8,7 @@ GraphSuggest::GraphSuggest(QWidget *parent) :
 {
     ui->setupUi(this);
     //QObject::connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(back()));
+    this->setWindowTitle("Graphs & Suggestions");
 }
 
 void GraphSuggest::back(){

@@ -51,8 +51,7 @@ LiftTips::LiftTips(QWidget *parent,QString user) :
     ui->deficit->setOpenExternalLinks(true);
     ui->deficit->setTextFormat(Qt::RichText);
     ui->deficit->setText("<a href=\"https://www.youtube.com/watch?v=CpWsUsqBtN8\"> Deficit Deadlifts </a>");
-
-
+    this->setWindowTitle("Lifting Tips");
 }
 
 LiftTips::~LiftTips()

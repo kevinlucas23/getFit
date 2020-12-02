@@ -17,6 +17,7 @@ SleepTips::SleepTips(QWidget *parent,QString user) :
     w = ui->sleepPic2->width();
     h = ui->sleepPic2->height();
     ui->sleepPic2->setPixmap(pic2.scaled(w,h,Qt::KeepAspectRatio));
+    this->setWindowTitle("Sleep Tips");
 }
 
 SleepTips::~SleepTips()

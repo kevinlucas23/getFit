@@ -6,6 +6,7 @@ ShowGraphs::ShowGraphs(QWidget *parent) :
     ui(new Ui::ShowGraphs)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Graphs");
 }
 
 ShowGraphs::~ShowGraphs()
