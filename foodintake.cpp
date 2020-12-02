@@ -10,7 +10,7 @@ FoodIntake::FoodIntake(QWidget *parent) :
     ui->proteins->setRange(0,5000);
     ui->dairy->setRange(0,5000);
     ui->fruits_veg->setRange(0,1000);
-
+    this->setWindowTitle("Calorie Consumption");
 }
 
 FoodIntake::~FoodIntake()

@@ -9,6 +9,7 @@ userCreation::userCreation(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->weightbox->setRange(50, 500);
+    this->setWindowTitle("Create User");
     /*
     QPixmap bkgnd("../getFit/pic2.jpg");
     bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);

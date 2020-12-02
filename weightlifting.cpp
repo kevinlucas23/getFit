@@ -6,6 +6,7 @@ Weightlifting::Weightlifting(QWidget *parent) :
     ui(new Ui::Weightlifting)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Weightlifting");
 }
 
 Weightlifting::~Weightlifting()

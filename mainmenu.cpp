@@ -13,6 +13,7 @@ MainMenu::MainMenu(QWidget *parent) :
     w = new Weightlifting();
     auto date = QDate::currentDate();
     ui->dateEdit->setDate(date);
+    this->setWindowTitle("Main Menu");
 }
 
 MainMenu::~MainMenu()

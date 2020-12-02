@@ -26,7 +26,7 @@
     <item alignment="Qt::AlignHCenter">
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>Enter your current weight:</string>
+       <string>Enter your current weight (lbs):</string>
       </property>
      </widget>
     </item>

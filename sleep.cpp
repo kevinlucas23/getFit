@@ -6,6 +6,7 @@ Sleep::Sleep(QWidget *parent) :
     ui(new Ui::Sleep)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Sleep");
 }
 
 Sleep::~Sleep()

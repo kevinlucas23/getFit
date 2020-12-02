@@ -7,6 +7,7 @@ UpdateWeight::UpdateWeight(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->currentWeight->setRange(50, 500);
+    this->setWindowTitle("Update Weight");
 }
 
 UpdateWeight::~UpdateWeight()
