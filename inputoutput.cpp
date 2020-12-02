@@ -96,7 +96,8 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     foodObject.insert("dairy", dairy);
     statsObject.insert("food", foodObject);
 
-    QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
+    QString ds = QString::number(date.year()*1000 + date.month()*100 + date.day());
+    //QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     auto temp = obj.value("Dates").toObject();
     temp[ds] = statsObject;
     obj["Dates"] = temp;

@@ -151,34 +151,61 @@ void ShowGraphs::plotExercise(){
 
 void ShowGraphs::plotCals(){
     QChart *c = new QChart();
-    QLineSeries *series = new QLineSeries();
-    series->setName("Calories");
-    QMap<QString, int>::iterator it;
+    QLineSeries *seriesC = new QLineSeries();
+    QLineSeries *seriesD = new QLineSeries();
+    QLineSeries *seriesFV = new QLineSeries();
+    QLineSeries *seriesP = new QLineSeries();
+    seriesC->setName("carbs");
+    seriesD->setName("dairy");
+    seriesFV->setName("fruits & vegetables");
+    seriesP->setName("proteins");
+    QMap<QString, QVector<int>>::iterator it;
 
     int x = 0;
     int max = 0;
-    for (it = map.begin(); it != map.end(); it++ ){
-        *series << QPointF(x, it.value());
-        if(it.value() > max){
-            max = it.value();
+    for (it = food_map.begin(); it != food_map.end(); it++ ){
+        *seriesC << QPointF(x, it.value()[0]);
+        *seriesD << QPointF(x, it.value()[1]);
+        *seriesFV << QPointF(x, it.value()[2]);
+        *seriesP << QPointF(x, it.value()[3]);
+        if(it.value()[0] > max){
+            max = it.value()[0];
+        }
+        if(it.value()[1] > max){
+            max = it.value()[0];
+        }
+        if(it.value()[2] > max){
+            max = it.value()[0];
+        }
+        if(it.value()[3] > max){
+            max = it.value()[0];
         }
         x++;
     }
 
-    c->addSeries(series);
+    c->addSeries(seriesC);
+    c->addSeries(seriesD);
+    c->addSeries(seriesFV);
+    c->addSeries(seriesP);
     c->setAnimationOptions(QChart::SeriesAnimations);
 
     QValueAxis *axisY = new QValueAxis();
     axisY->setTitleText("Calories Consumed");
     axisY->setRange(0, max + 20);
     c->addAxis(axisY, Qt::AlignLeft);
-    series->attachAxis(axisY);
-
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
     axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
-    series->attachAxis(axisX);
+
+    seriesC->attachAxis(axisX);
+    seriesC->attachAxis(axisY);
+    seriesD->attachAxis(axisX);
+    seriesD->attachAxis(axisY);
+    seriesFV->attachAxis(axisX);
+    seriesFV->attachAxis(axisY);
+    seriesP->attachAxis(axisX);
+    seriesP->attachAxis(axisY);
 
     c->legend()->setVisible(true);
     c->legend()->setAlignment(Qt::AlignBottom);
