@@ -45,19 +45,26 @@ void ShowGraphs::plotWeight(){
 
     int x = 0;
     int max = 0;
+    int min = 500;
     for (it = map.begin(); it != map.end(); it++ ){
         *series << QPointF(x, it.value());
         if(it.value() > max){
             max = it.value();
         }
+        if(it.value() < min){
+            min = it.value();
+        }
         x++;
+    }
+    if(min == 500){
+        min = 0;
     }
     c->addSeries(series);
     c->setAnimationOptions(QChart::SeriesAnimations);
 
     QValueAxis *axisY = new QValueAxis();
     axisY->setTitleText("Weight(lb)");
-    axisY->setRange(0, max + 20);
+    axisY->setRange(min, max);
     c->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
