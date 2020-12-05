@@ -6,6 +6,7 @@ MainMenu::MainMenu(QWidget *parent) :
     ui(new Ui::MainMenu)
 {
     ui->setupUi(this);
+    move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
     uw = new UpdateWeight();
     de = new DailyExercise();
     s = new class Sleep();

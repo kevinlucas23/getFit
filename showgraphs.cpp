@@ -7,6 +7,7 @@ ShowGraphs::ShowGraphs(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Graphs");
+    move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 }
 
 ShowGraphs::~ShowGraphs()

@@ -8,6 +8,7 @@ getFit::getFit(QWidget *parent)
     , ui(new Ui::getFit)
 {
     ui->setupUi(this);
+    move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
     ui->label_3->setText("Welcome...");
     /*
     QPixmap bkgnd("../getFit/pic1.jpg");

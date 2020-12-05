@@ -2,6 +2,7 @@
 #define WEIGHTLIFTING_H
 
 #include <QDialog>
+#include "inputoutput.h"
 
 namespace Ui {
 class Weightlifting;
