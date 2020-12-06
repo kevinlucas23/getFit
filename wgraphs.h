@@ -27,7 +27,7 @@ public:
 private:
     Ui::WGraphs *ui;
     QString currentUser;
-    QMap<QString, QVector<int>> weight_map;
+    QMap<QString, int> map;
     QMap<int, double> max_map;
 };
 

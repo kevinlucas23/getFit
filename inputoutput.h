@@ -62,7 +62,7 @@ public:
     inputOutput();
     bool create_user(Data k);
     void read_users();
-    void addData(QString user, QDate, int, int, int, int, int, int, int);
+    void addData(QString user, QDate, int, int, int, int, int, int, int, double bench, double row, double squat, double dead, double press);
     void addBench(QString user, QDate date, int reps, int weight);
     Data getData();
     void updateFile(QJsonObject Book);

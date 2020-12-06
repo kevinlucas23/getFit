@@ -20,7 +20,7 @@ private slots:
     void on_pushButton_clicked();
 
 signals:
-    void end(QString, int, int);
+    void end(int, int, int, int, int, int, int, int, int, int);
 
 private:
     Ui::Weightlifting *ui;

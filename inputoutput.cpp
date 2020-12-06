@@ -46,11 +46,11 @@ void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QMap<QString
         auto data = temp.value(key).toObject();
         QStringList inside = data.keys();
         for(auto a : inside){
-            if(a == what && a != "food" && a != "bench" && a != "row" && a != "press" && a != "dead" && a != "squat"){
+            if(a == what && a != "food"){
                 auto value = data.value(a).toInt();
                 map[key] = value;
             }
-            if(a == what && (a == "food" || a == "bench" || a == "row" || a == "press" || a == "dead" || a == "squat")){
+            if(a == what && a == "food"){
                 auto k = data.value(a).toObject();
                 QStringList l = k.keys();
                 QVector<int> q;
@@ -77,25 +77,7 @@ bool inputOutput::isGL(QString user)
     return (temp == "Gain") ? true : false;
 }
 
-void inputOutput::addBench(QString user, QDate date, int reps, int weight){
-    // This overwrites data when it shouldn't
-    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "breps": reps, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
-    read_users();
-    auto obj =  book.value(user).toObject();
-    QJsonObject statsObject;
-    statsObject.insert("breps", QJsonValue::fromVariant(reps));
-    statsObject.insert("bweight", QJsonValue::fromVariant(weight));
-
-    QString ds = QString::number(date.year()*1000 + date.month()*100 + date.day());
-    auto temp = obj.value("Dates").toObject();
-    temp[ds] = statsObject;
-    obj["Dates"] = temp;
-    book[user] = obj;
-
-    updateFile(book);
-}
-
-void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
+void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy, double bench, double row, double squat, double dead, double press){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "lifting": {"ex": ex, "reps": reps, "w": w}, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     read_users();
     auto obj =  book.value(user).toObject();
@@ -106,6 +88,22 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     statsObject.insert("weight", QJsonValue::fromVariant(weight));
     statsObject.insert("cals", QJsonValue::fromVariant(cals));
     statsObject.insert("sleep", QJsonValue::fromVariant(sleep));
+
+    if(bench > 0 && bench < 2000){
+        statsObject.insert("bench", QJsonValue::fromVariant(bench));
+    }
+    if(row > 0 && row < 2000){
+        statsObject.insert("row", QJsonValue::fromVariant(row));
+    }
+    if(squat > 0 && squat < 2000){
+        statsObject.insert("squat", QJsonValue::fromVariant(squat));
+    }
+    if(dead > 0 && dead < 2000){
+        statsObject.insert("dead", QJsonValue::fromVariant(dead));
+    }
+    if(bench > 0 && bench < 2000){
+        statsObject.insert("press", QJsonValue::fromVariant(press));
+    }
 
     QJsonObject foodObject;
     foodObject.insert("carbs", carbs);

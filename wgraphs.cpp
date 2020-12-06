@@ -40,42 +40,40 @@ void WGraphs::plot()
 {
     // user, QMap<QString, int> map, QString what);
     // "lifting": {"ex": ex, "reps": reps, "w": w},
-    QMap<QString, int> map;
-    getallgraph(currentUser, &map, &weight_map, "bench");
+    QMap<QString, QVector<int>> m;
+    getallgraph(currentUser, &map, &m, "bench");
     plotBench();
-    weight_map.clear();
-    getallgraph(currentUser, &map, &weight_map, "row");
+    map.clear();
+    getallgraph(currentUser, &map, &m, "row");
     plotRow();
-    weight_map.clear();
-    getallgraph(currentUser, &map, &weight_map, "squat");
+    map.clear();
+    getallgraph(currentUser, &map, &m, "squat");
     plotSquat();
-    weight_map.clear();
-    getallgraph(currentUser, &map, &weight_map, "dead");
+    map.clear();
+    getallgraph(currentUser, &map, &m, "dead");
     plotDeadlift();
-    weight_map.clear();
-    getallgraph(currentUser, &map, &weight_map, "press");
+    map.clear();
+    getallgraph(currentUser, &map, &m, "press");
     plotPress();
-    weight_map.clear();
+    map.clear();
 }
 
 void WGraphs::plotSquat(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
     series->setName("Squat");
-    QMap<QString, QVector<int>>::iterator it;
+    QMap<QString, int>::iterator it;
 
     int x = 0;
     int max = 0;
     int min = 500;
-    double val = 0;
-    for (it = weight_map.begin(); it != weight_map.end(); it++ ){
-        val = max_map[it.value()[0]]*it.value()[1];
-        *series << QPointF(x, val);
-        if(val > max){
-            max = val;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
         }
-        if(val < min){
-            min = val;
+        if(it.value() < min){
+            min = it.value();
         }
         x++;
     }
@@ -93,7 +91,7 @@ void WGraphs::plotSquat(){
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0, weight_map.size() - 1);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -108,20 +106,18 @@ void WGraphs::plotDeadlift(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
     series->setName("Deadlift");
-    QMap<QString, QVector<int>>::iterator it;
+    QMap<QString, int>::iterator it;
 
     int x = 0;
     int max = 0;
     int min = 500;
-    double val = 0;
-    for (it = weight_map.begin(); it != weight_map.end(); it++ ){
-        val = max_map[it.value()[0]]*it.value()[1];
-        *series << QPointF(x, val);
-        if(val > max){
-            max = val;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
         }
-        if(val < min){
-            min = val;
+        if(it.value() < min){
+            min = it.value();
         }
         x++;
     }
@@ -139,7 +135,7 @@ void WGraphs::plotDeadlift(){
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0, weight_map.size() - 1);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -154,20 +150,18 @@ void WGraphs::plotPress(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
     series->setName("Overhead Press");
-    QMap<QString, QVector<int>>::iterator it;
+    QMap<QString, int>::iterator it;
 
     int x = 0;
     int max = 0;
     int min = 500;
-    double val = 0;
-    for (it = weight_map.begin(); it != weight_map.end(); it++ ){
-        val = max_map[it.value()[0]]*it.value()[1];
-        *series << QPointF(x, val);
-        if(val > max){
-            max = val;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
         }
-        if(val < min){
-            min = val;
+        if(it.value() < min){
+            min = it.value();
         }
         x++;
     }
@@ -185,7 +179,7 @@ void WGraphs::plotPress(){
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0, weight_map.size() - 1);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -200,20 +194,18 @@ void WGraphs::plotBench(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
     series->setName("Bench Press");
-    QMap<QString, QVector<int>>::iterator it;
+    QMap<QString, int>::iterator it;
 
     int x = 0;
     int max = 0;
     int min = 500;
-    double val = 0;
-    for (it = weight_map.begin(); it != weight_map.end(); it++ ){
-        val = max_map[it.value()[0]]*it.value()[1];
-        *series << QPointF(x, val);
-        if(val > max){
-            max = val;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
         }
-        if(val < min){
-            min = val;
+        if(it.value() < min){
+            min = it.value();
         }
         x++;
     }
@@ -231,7 +223,7 @@ void WGraphs::plotBench(){
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0, weight_map.size() - 1);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
@@ -246,20 +238,18 @@ void WGraphs::plotRow(){
     QChart *c = new QChart();
     QLineSeries *series = new QLineSeries();
     series->setName("Barbell Row");
-    QMap<QString, QVector<int>>::iterator it;
+    QMap<QString, int>::iterator it;
 
     int x = 0;
     int max = 0;
     int min = 500;
-    double val = 0;
-    for (it = weight_map.begin(); it != weight_map.end(); it++ ){
-        val = max_map[it.value()[0]]*it.value()[1];
-        *series << QPointF(x, val);
-        if(val > max){
-            max = val;
+    for (it = map.begin(); it != map.end(); it++ ){
+        *series << QPointF(x, it.value());
+        if(it.value() > max){
+            max = it.value();
         }
-        if(val < min){
-            min = val;
+        if(it.value() < min){
+            min = it.value();
         }
         x++;
     }
@@ -277,7 +267,7 @@ void WGraphs::plotRow(){
 
     QValueAxis *axisX = new QValueAxis();
     axisX->setTitleText("Time");
-    axisX->setRange(0, weight_map.size() - 1);
+    axisX->setRange(0, map.size() - 1);
     c->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 

@@ -13,6 +13,21 @@ MainMenu::MainMenu(QWidget *parent) :
     fi = new FoodIntake();
     w = new Weightlifting();
     auto date = QDate::currentDate();
+    max_map[1] = 1;
+    max_map[2] = 1/0.97;
+    max_map[3] = 1/0.94;
+    max_map[4] = 1/0.92;
+    max_map[5] = 1/0.89;
+    max_map[6] = 1/0.86;
+    max_map[7] = 1/0.83;
+    max_map[8] = 1/0.81;
+    max_map[9] = 1/0.78;
+    max_map[10] = 1/0.75;
+    max_map[11] = 1/0.73;
+    max_map[12] = 1/0.71;
+    max_map[13] = 1/0.70;
+    max_map[14] = 1/0.68;
+    max_map[15] = 1/0.67;
     ui->dateEdit->setDate(date);
     this->setWindowTitle("Main Menu");
 }
@@ -29,22 +44,7 @@ void MainMenu::setCurrentUser(QString user){
 
 void MainMenu::graphSuggest(){
     // "Dates": {"11/28/20": {"weight": 171, "sleep": 8, "cals": 3000, "food": {"carbs": 900, "proteins": 400, "fv": 300, "dairy": 500}}}
-    addData(currentUser, ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy);
-    if(exercise == "Bench Press"){
-        //addBench(currentUser, ui->dateEdit->date(), reps, exWeight);
-    }
-    if(exercise == "Squat"){
-        exercise = "squat";
-    }
-    if(exercise == "Deadlift"){
-        exercise = "dead";
-    }
-    if(exercise == "Barbell Row"){
-        exercise = "row";
-    }
-    if(exercise == "Overhead Press"){
-        exercise = "press";
-    }
+    addData(currentUser, ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy, bench, row, squat, dead, press);
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();
@@ -79,7 +79,7 @@ void MainMenu::foodIntake(){
 }
 
 void MainMenu::weightlifting(){
-    connect(w, SIGNAL(end(QString, int, int)), this, SLOT(setWeightLifting(QString, int, int)));
+    connect(w, SIGNAL(end(int, int, int, int, int, int, int, int, int, int)), this, SLOT(setWeightLifting(int, int, int, int, int, int, int, int, int, int)));
     w->show();
 }
 
@@ -89,11 +89,12 @@ void MainMenu::setWeight(int w){
     qDebug() << weight;
 }
 
-void MainMenu::setWeightLifting(QString e, int r, int wt){
-    exercise = e;
-    reps = r;
-    exWeight = wt;
-    qDebug() << "ex: " << exercise << " reps: " << r << " weight: " << wt;
+void MainMenu::setWeightLifting(int rbench, int wbench, int rsquat, int wsquat, int rrow, int wrow, int rpress, int wpress, int rdead, int wdead){
+    bench = max_map[rbench] * wbench;
+    row = max_map[rsquat] * wsquat;
+    squat = max_map[rrow] * wrow;
+    dead = max_map[rpress] * wpress;
+    press = max_map[rdead] * wdead;
     w->hide();
 }
 
