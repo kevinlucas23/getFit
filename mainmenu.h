@@ -31,6 +31,9 @@ public:
 private:
     Ui::MainMenu *ui;
     QString currentUser;
+    QString exercise;
+    int exWeight;
+    int reps;
     int weight;
     int cals;
     int sleepTime;
@@ -55,6 +58,7 @@ private slots:
     void setSleep(int sl);
     void setDailyExercise(int e);
     void setFoodIntake(int c, int p, int fv, int d);
+    void setWeightLifting(QString, int, int);
     void noData();
 };
 

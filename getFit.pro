@@ -23,7 +23,8 @@ SOURCES += \
     suggestions.cpp \
     updateweight.cpp \
     usercreation.cpp \
-    weightlifting.cpp
+    weightlifting.cpp \
+    wgraphs.cpp
 
 HEADERS += \
     dailyexercise.h \
@@ -39,7 +40,8 @@ HEADERS += \
     suggestions.h \
     updateweight.h \
     usercreation.h \
-    weightlifting.h
+    weightlifting.h \
+    wgraphs.h
 
 FORMS += \
     dailyexercise.ui \
@@ -54,7 +56,8 @@ FORMS += \
     suggestions.ui \
     updateweight.ui \
     usercreation.ui \
-    weightlifting.ui
+    weightlifting.ui \
+    wgraphs.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

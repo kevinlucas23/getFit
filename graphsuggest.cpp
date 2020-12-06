@@ -25,7 +25,6 @@ GraphSuggest::~GraphSuggest()
 
 void GraphSuggest::setCurrentUser(QString user){
     currentUser = user;
-
 }
 
 void GraphSuggest::showGraphs(){
@@ -39,4 +38,10 @@ void GraphSuggest::suggestions(){
     Suggestions *s = new Suggestions();
     s->show();
     s->setCurrentUser(currentUser);
+}
+
+void GraphSuggest::wgraphs(){
+    WGraphs *wg = new WGraphs();
+    wg->show();
+    wg->setCurrentUser(currentUser);
 }

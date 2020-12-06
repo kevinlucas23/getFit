@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>283</width>
+    <width>428</width>
     <height>135</height>
    </rect>
   </property>
@@ -53,13 +53,26 @@
      <string>Back</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lifting Graphs</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>283</width>
+     <width>428</width>
      <height>22</height>
     </rect>
    </property>
@@ -91,8 +104,8 @@
    <slot>suggestions()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>290</x>
-     <y>66</y>
+     <x>270</x>
+     <y>88</y>
     </hint>
     <hint type="destinationlabel">
      <x>336</x>
@@ -108,11 +121,27 @@
    <hints>
     <hint type="sourcelabel">
      <x>42</x>
-     <y>25</y>
+     <y>47</y>
     </hint>
     <hint type="destinationlabel">
      <x>81</x>
      <y>24</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>GraphSuggest</receiver>
+   <slot>wgraphs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>304</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>300</x>
+     <y>42</y>
     </hint>
    </hints>
   </connection>
@@ -121,5 +150,6 @@
   <slot>showGraphs()</slot>
   <slot>suggestions()</slot>
   <slot>back()</slot>
+  <slot>wgraphs()</slot>
  </slots>
 </ui>

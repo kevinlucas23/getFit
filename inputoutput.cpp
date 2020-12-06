@@ -46,11 +46,11 @@ void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QMap<QString
         auto data = temp.value(key).toObject();
         QStringList inside = data.keys();
         for(auto a : inside){
-            if(a == what && a != "food"){
+            if(a == what && a != "food" && a != "bench" && a != "row" && a != "press" && a != "dead" && a != "squat"){
                 auto value = data.value(a).toInt();
                 map[key] = value;
             }
-            if(a == what && a == "food"){
+            if(a == what && (a == "food" || a == "bench" || a == "row" || a == "press" || a == "dead" || a == "squat")){
                 auto k = data.value(a).toObject();
                 QStringList l = k.keys();
                 QVector<int> q;
@@ -77,8 +77,8 @@ bool inputOutput::isGL(QString user)
     return (temp == "Gain") ? true : false;
 }
 
-void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
-    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
+void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy, QString ex, int reps, int w){
+    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "lifting": {"ex": ex, "reps": reps, "w": w}, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     read_users();
     auto obj =  book.value(user).toObject();
     auto a = obj.value("Weight").toInt();
@@ -89,12 +89,20 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     statsObject.insert("cals", QJsonValue::fromVariant(cals));
     statsObject.insert("sleep", QJsonValue::fromVariant(sleep));
 
+    QJsonObject exObject;
+    exObject.insert("reps", reps);
+    exObject.insert("w", w);
+
     QJsonObject foodObject;
     foodObject.insert("carbs", carbs);
     foodObject.insert("proteins", proteins);
     foodObject.insert("fv", fv);
     foodObject.insert("dairy", dairy);
+
     statsObject.insert("food", foodObject);
+    if(reps > 0 && reps < 20 && w > 0 && w < 3000){
+        statsObject.insert(ex, exObject);
+    }
 
     QString ds = QString::number(date.year()*1000 + date.month()*100 + date.day());
     //QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());

@@ -29,7 +29,22 @@ void MainMenu::setCurrentUser(QString user){
 
 void MainMenu::graphSuggest(){
     // "Dates": {"11/28/20": {"weight": 171, "sleep": 8, "cals": 3000, "food": {"carbs": 900, "proteins": 400, "fv": 300, "dairy": 500}}}
-    addData(currentUser, ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy);
+    if(exercise == "Bench Press"){
+        exercise = "bench";
+    }
+    if(exercise == "Squat"){
+        exercise = "squat";
+    }
+    if(exercise == "Deadlift"){
+        exercise = "dead";
+    }
+    if(exercise == "Barbell Row"){
+        exercise = "row";
+    }
+    if(exercise == "Overhead Press"){
+        exercise = "press";
+    }
+    addData(currentUser, ui->dateEdit->date(), weight, cals, sleepTime, carbs, proteins, fruits_veg, dairy, exercise, reps, exWeight);
     this->hide();
     GraphSuggest *sg = new GraphSuggest();
     sg->show();
@@ -64,7 +79,7 @@ void MainMenu::foodIntake(){
 }
 
 void MainMenu::weightlifting(){
-    connect(w, SIGNAL(end(int)), this, SLOT(setWeightLifting(int)));
+    connect(w, SIGNAL(end(QString, int, int)), this, SLOT(setWeightLifting(QString, int, int)));
     w->show();
 }
 
@@ -72,6 +87,14 @@ void MainMenu::setWeight(int w){
     weight = w;
     uw->hide();
     qDebug() << weight;
+}
+
+void MainMenu::setWeightLifting(QString e, int r, int wt){
+    exercise = e;
+    reps = r;
+    exWeight = wt;
+    qDebug() << "ex: " << exercise << " reps: " << r << " weight: " << wt;
+    w->hide();
 }
 
 void MainMenu::setDailyExercise(int e){

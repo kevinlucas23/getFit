@@ -16,6 +16,12 @@ public:
     explicit Weightlifting(QWidget *parent = nullptr);
     ~Weightlifting();
 
+private slots:
+    void on_pushButton_clicked();
+
+signals:
+    void end(QString, int, int);
+
 private:
     Ui::Weightlifting *ui;
 };
