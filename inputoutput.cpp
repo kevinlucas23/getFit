@@ -77,7 +77,25 @@ bool inputOutput::isGL(QString user)
     return (temp == "Gain") ? true : false;
 }
 
-void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy, QString ex, int reps, int w){
+void inputOutput::addBench(QString user, QDate date, int reps, int weight){
+    // This overwrites data when it shouldn't
+    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "breps": reps, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
+    read_users();
+    auto obj =  book.value(user).toObject();
+    QJsonObject statsObject;
+    statsObject.insert("breps", QJsonValue::fromVariant(reps));
+    statsObject.insert("bweight", QJsonValue::fromVariant(weight));
+
+    QString ds = QString::number(date.year()*1000 + date.month()*100 + date.day());
+    auto temp = obj.value("Dates").toObject();
+    temp[ds] = statsObject;
+    obj["Dates"] = temp;
+    book[user] = obj;
+
+    updateFile(book);
+}
+
+void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "lifting": {"ex": ex, "reps": reps, "w": w}, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     read_users();
     auto obj =  book.value(user).toObject();
@@ -89,10 +107,6 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     statsObject.insert("cals", QJsonValue::fromVariant(cals));
     statsObject.insert("sleep", QJsonValue::fromVariant(sleep));
 
-    QJsonObject exObject;
-    exObject.insert("reps", reps);
-    exObject.insert("w", w);
-
     QJsonObject foodObject;
     foodObject.insert("carbs", carbs);
     foodObject.insert("proteins", proteins);
@@ -100,9 +114,6 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     foodObject.insert("dairy", dairy);
 
     statsObject.insert("food", foodObject);
-    if(reps > 0 && reps < 20 && w > 0 && w < 3000){
-        statsObject.insert(ex, exObject);
-    }
 
     QString ds = QString::number(date.year()*1000 + date.month()*100 + date.day());
     //QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
