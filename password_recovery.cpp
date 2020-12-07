@@ -17,6 +17,8 @@ void Password_recovery::setQ(QString temp)
 {
     if(temp != "")
         ui->question_l->setText(temp);
+    else
+        ui->question_l->setReadOnly(false);
 }
 
 void Password_recovery::on_pushButton_clicked()
