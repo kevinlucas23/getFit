@@ -27,10 +27,11 @@ void inputOutput::updateFile(QJsonObject Book){
     }
 }
 
-void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QString what)
+void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QMap<QString, QVector<int>>* po, QString what)
 {
 //    user = "kevin";
     QMap<QString, int> map;
+    QMap<QString, QVector<int>> map2;
     read_users();
     auto obj =  book.value(user).toObject();
     if(what == "weight"){
@@ -45,14 +46,24 @@ void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QString what
         auto data = temp.value(key).toObject();
         QStringList inside = data.keys();
         for(auto a : inside){
-            if(a == what){
+            if(a == what && a != "food"){
                 auto value = data.value(a).toInt();
                 map[key] = value;
-                break;
+            }
+            if(a == what && a == "food"){
+                auto k = data.value(a).toObject();
+                QStringList l = k.keys();
+                QVector<int> q;
+                for(auto u : l){
+                    auto t = k.value(u).toInt();
+                    q.push_back(t);
+                }
+                map2[key] = q;
             }
         }
     }
     *op = map;
+    *po = map2;
 //    updateFile(book);
 }
 
@@ -66,8 +77,8 @@ bool inputOutput::isGL(QString user)
     return (temp == "Gain") ? true : false;
 }
 
-void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy){
-    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
+void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy, double bench, double row, double squat, double dead, double press){
+    // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "lifting": {"ex": ex, "reps": reps, "w": w}, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     read_users();
     auto obj =  book.value(user).toObject();
     auto a = obj.value("Weight").toInt();
@@ -78,14 +89,32 @@ void inputOutput::addData(QString user, QDate date, int weight, int cals, int sl
     statsObject.insert("cals", QJsonValue::fromVariant(cals));
     statsObject.insert("sleep", QJsonValue::fromVariant(sleep));
 
+    if(bench > 0 && bench < 2000){
+        statsObject.insert("bench", QJsonValue::fromVariant(bench));
+    }
+    if(row > 0 && row < 2000){
+        statsObject.insert("row", QJsonValue::fromVariant(row));
+    }
+    if(squat > 0 && squat < 2000){
+        statsObject.insert("squat", QJsonValue::fromVariant(squat));
+    }
+    if(dead > 0 && dead < 2000){
+        statsObject.insert("dead", QJsonValue::fromVariant(dead));
+    }
+    if(bench > 0 && bench < 2000){
+        statsObject.insert("press", QJsonValue::fromVariant(press));
+    }
+
     QJsonObject foodObject;
     foodObject.insert("carbs", carbs);
     foodObject.insert("proteins", proteins);
     foodObject.insert("fv", fv);
     foodObject.insert("dairy", dairy);
+
     statsObject.insert("food", foodObject);
 
-    QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
+    QString ds = QString::number(date.year()*1000 + date.month()*100 + date.day());
+    //QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     auto temp = obj.value("Dates").toObject();
     temp[ds] = statsObject;
     obj["Dates"] = temp;
@@ -107,7 +136,9 @@ bool inputOutput::create_user(Data k)
     all.insert("Weight", k.getweight());
     all.insert("Password", k.getpasswd());
     all.insert("G/L", (k.getgain()) ? "Gain" : "Lose");
-
+    all.insert("Phone number", k.getnumber());
+    all.insert("Question", k.getQuestion());
+    all.insert("Answer", k.getAns());
     auto date = QDate::currentDate();
     QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     all.insert("sign_in", ds);
@@ -157,4 +188,56 @@ bool inputOutput::check_user(QString kev, QString pass)
 QJsonObject inputOutput::getBook()
 {
     return book;
+}
+
+std::pair<bool, QString> inputOutput::user_recovery(QString user, QString question, QString ans)
+{
+    bool a = false, b = false;
+    read_users();
+    auto obj =  book.value(user).toObject();
+    if(book.contains(user)){
+        auto obj =  book.value(user).toObject();
+        QStringList keys = obj.keys();
+        for(auto key : keys){
+            if (key == "Question"){
+                auto value = obj.take(key);
+                if(value.toString() == question){
+                    a = true;
+                }
+            }
+            if (key == "Answer"){
+                auto value = obj.take(key);
+                if(value.toString() == ans){
+                    b = true;
+                }
+            }
+        }
+        if(!a && b)
+            return {false, "wrong question"};
+        else if(a && !b)
+            return {false, "wrong ans"};
+        else if(!a && !b)
+            return {false, "wrong everything"};
+        else
+            return {true, ""};
+    }
+    return {false,"wrong user"};
+}
+
+void inputOutput::update_pass(QString kev, QString pass)
+{
+    read_users();
+    auto obj =  book.value(kev).toObject();
+    obj["Password"] = pass;
+    book[kev] = obj;
+
+    updateFile(book);
+}
+
+void inputOutput::getQ(QString kev, QString *temp)
+{
+    read_users();
+    auto obj =  book.value(kev).toObject();
+    auto k = obj["Question"];
+    *temp = k.toString();
 }

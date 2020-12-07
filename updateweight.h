@@ -2,6 +2,9 @@
 #define UPDATEWEIGHT_H
 
 #include <QDialog>
+#include <QMainWindow>
+
+#include "inputoutput.h"
 
 namespace Ui {
 class UpdateWeight;

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 #include "showgraphs.h"
+#include "wgraphs.h"
 #include "suggestions.h"
 
 namespace Ui {
@@ -23,6 +24,7 @@ private slots:
     void showGraphs();
     void suggestions();
     void back();
+    void wgraphs();
 
 private:
     Ui::GraphSuggest *ui;

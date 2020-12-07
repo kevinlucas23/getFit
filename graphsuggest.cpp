@@ -8,6 +8,8 @@ GraphSuggest::GraphSuggest(QWidget *parent) :
 {
     ui->setupUi(this);
     //QObject::connect(ui->pushButton_3,SIGNAL(clicked()),this,SLOT(back()));
+    this->setWindowTitle("Graphs & Suggestions");
+    move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
 }
 
 void GraphSuggest::back(){
@@ -23,7 +25,6 @@ GraphSuggest::~GraphSuggest()
 
 void GraphSuggest::setCurrentUser(QString user){
     currentUser = user;
-
 }
 
 void GraphSuggest::showGraphs(){
@@ -37,4 +38,10 @@ void GraphSuggest::suggestions(){
     Suggestions *s = new Suggestions();
     s->show();
     s->setCurrentUser(currentUser);
+}
+
+void GraphSuggest::wgraphs(){
+    WGraphs *wg = new WGraphs();
+    wg->show();
+    wg->setCurrentUser(currentUser);
 }

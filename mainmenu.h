@@ -31,6 +31,11 @@ public:
 private:
     Ui::MainMenu *ui;
     QString currentUser;
+    double bench;
+    double row;
+    double squat;
+    double dead;
+    double press;
     int weight;
     int cals;
     int sleepTime;
@@ -43,6 +48,7 @@ private:
     FoodIntake *fi;
     Weightlifting *w;
     class Sleep *s;
+    QMap<int, double> max_map;
 
 private slots:
     void dailyExercise();
@@ -55,6 +61,7 @@ private slots:
     void setSleep(int sl);
     void setDailyExercise(int e);
     void setFoodIntake(int c, int p, int fv, int d);
+    void setWeightLifting(int rbench, int wbench, int rsquat, int wsquat, int rrow, int wrow, int rpress, int wpress, int rdead, int wdead);
     void noData();
     void viewProgram();
 };

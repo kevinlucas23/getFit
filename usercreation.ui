@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>370</width>
-    <height>559</height>
+    <height>751</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,43 +19,17 @@
      <x>20</x>
      <y>10</y>
      <width>331</width>
-     <height>531</height>
+     <height>731</height>
     </rect>
    </property>
    <property name="title">
     <string>Create Account</string>
    </property>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>200</y>
-      <width>271</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Passwords must be at least 6 characters.</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="passw_radio">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>280</y>
-      <width>251</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Make password visible</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="push_createa">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>500</y>
+      <x>70</x>
+      <y>700</y>
       <width>161</width>
       <height>23</height>
      </rect>
@@ -63,198 +37,6 @@
     <property name="text">
      <string>Create your account</string>
     </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>271</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Your username</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="uname_create"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget2">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>90</y>
-      <width>271</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Email</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="email_create"/>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget3">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>150</y>
-      <width>271</width>
-      <height>73</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Password</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="passw1_create">
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget4">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>230</y>
-      <width>271</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_4">
-     <item>
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Re-enter password</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="passw2_create">
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>55</x>
-      <y>330</y>
-      <width>111</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_7">
-     <item>
-      <widget class="QLabel" name="heightlabel">
-       <property name="text">
-        <string>Height (in):</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="weightlabel">
-       <property name="text">
-        <string>Weight (lb):</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="agelabel">
-       <property name="text">
-        <string>Age:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="sexlabel">
-       <property name="text">
-        <string>Sex:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>Weight Goal:</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>330</y>
-      <width>116</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_8">
-     <item>
-      <widget class="QSpinBox" name="heightbox"/>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="weightbox"/>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="agebox"/>
-     </item>
-     <item>
-      <widget class="QComboBox" name="sexbox">
-       <item>
-        <property name="text">
-         <string>M</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>F</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QComboBox" name="comboBox">
-       <item>
-        <property name="text">
-         <string>Gain Weight</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Lose Weight</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
@@ -269,6 +51,287 @@
      <string/>
     </property>
    </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>470</y>
+      <width>241</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QLabel" name="heightlabel">
+         <property name="text">
+          <string>Height (in):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="weightlabel">
+         <property name="text">
+          <string>Weight (lb):</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="agelabel">
+         <property name="text">
+          <string>Age:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="sexlabel">
+         <property name="text">
+          <string>Sex:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Weight Goal:</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QSpinBox" name="heightbox"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="weightbox"/>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="agebox"/>
+       </item>
+       <item>
+        <widget class="QComboBox" name="sexbox">
+         <item>
+          <property name="text">
+           <string>M</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>F</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox">
+         <item>
+          <property name="text">
+           <string>Gain Weight</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Lose Weight</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>440</y>
+      <width>177</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>ans:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="ans_l"/>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>297</width>
+      <height>403</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_11">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Your username</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="uname_create"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Email</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="email_create"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Password</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="passw1_create">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Passwords must be at least 6 characters.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Re-enter password</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="passw2_create">
+           <property name="echoMode">
+            <enum>QLineEdit::Password</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="passw_radio">
+         <property name="text">
+          <string>Make password visible</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Phone Number</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="phone_num">
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Please enter questions below for password 
+recovery</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>1.</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="question_l"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_5"/>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_6"/>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>2</width>
+     <height>2</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2"/>
   </widget>
  </widget>
  <resources/>

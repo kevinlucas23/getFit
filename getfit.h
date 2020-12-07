@@ -6,6 +6,7 @@
 // files included
 #include "inputoutput.h"
 #include "usercreation.h"
+#include "password_recovery.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class getFit; }
@@ -28,7 +29,10 @@ private slots:
 
     void on_passw_sign_returnPressed();
 
+    void on_forgot_pass_clicked();
+
 private:
     Ui::getFit *ui;
+    QString username;
 };
 #endif // GETFIT_H

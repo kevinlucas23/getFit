@@ -8,8 +8,7 @@ Suggestions::Suggestions(QWidget *parent) :
     ui(new Ui::Suggestions)
 {
     ui->setupUi(this);
-
-
+    this->setWindowTitle("Suggestions");
 }
 
 void Suggestions::sleepPage(){

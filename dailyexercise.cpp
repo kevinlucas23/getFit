@@ -7,6 +7,7 @@ DailyExercise::DailyExercise(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->calories->setRange(0,5000);
+    this->setWindowTitle("Exercise");
 }
 
 DailyExercise::~DailyExercise()

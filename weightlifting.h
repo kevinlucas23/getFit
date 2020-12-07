@@ -2,6 +2,7 @@
 #define WEIGHTLIFTING_H
 
 #include <QDialog>
+#include "inputoutput.h"
 
 namespace Ui {
 class Weightlifting;
@@ -14,6 +15,12 @@ class Weightlifting : public QDialog
 public:
     explicit Weightlifting(QWidget *parent = nullptr);
     ~Weightlifting();
+
+private slots:
+    void on_pushButton_clicked();
+
+signals:
+    void end(int, int, int, int, int, int, int, int, int, int);
 
 private:
     Ui::Weightlifting *ui;
