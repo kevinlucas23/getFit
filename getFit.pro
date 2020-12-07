@@ -13,10 +13,12 @@ SOURCES += \
     foodintake.cpp \
     graphsuggest.cpp \
     inputoutput.cpp \
+    liftprogram.cpp \
     lifttips.cpp \
     main.cpp \
     getfit.cpp \
     mainmenu.cpp \
+    rpe.cpp \
     showgraphs.cpp \
     sleep.cpp \
     sleeptips.cpp \
@@ -31,8 +33,10 @@ HEADERS += \
     getfit.h \
     graphsuggest.h \
     inputoutput.h \
+    liftprogram.h \
     lifttips.h \
     mainmenu.h \
+    rpe.h \
     showgraphs.h \
     sleep.h \
     sleeptips.h \
@@ -46,8 +50,10 @@ FORMS += \
     foodintake.ui \
     getfit.ui \
     graphsuggest.ui \
+    liftprogram.ui \
     lifttips.ui \
     mainmenu.ui \
+    rpe.ui \
     showgraphs.ui \
     sleep.ui \
     sleeptips.ui \

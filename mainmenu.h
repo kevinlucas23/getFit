@@ -56,6 +56,7 @@ private slots:
     void setDailyExercise(int e);
     void setFoodIntake(int c, int p, int fv, int d);
     void noData();
+    void viewProgram();
 };
 
 #endif // MAINMENU_H

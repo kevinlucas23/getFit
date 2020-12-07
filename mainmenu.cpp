@@ -1,5 +1,6 @@
 #include "mainmenu.h"
 #include "ui_mainmenu.h"
+#include "liftprogram.h"
 
 MainMenu::MainMenu(QWidget *parent) :
     QMainWindow(parent),
@@ -18,6 +19,11 @@ MainMenu::MainMenu(QWidget *parent) :
 MainMenu::~MainMenu()
 {
     delete ui;
+}
+
+void MainMenu::viewProgram(){
+   LiftProgram *lp = new LiftProgram();
+   lp->show();
 }
 
 void MainMenu::setCurrentUser(QString user){
