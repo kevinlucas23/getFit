@@ -5,6 +5,7 @@ ShowGraphs::ShowGraphs(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ShowGraphs)
 {
+    // https://strengthlevel.com/one-rep-max-calculator
     ui->setupUi(this);
     this->setWindowTitle("Graphs");
     move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());

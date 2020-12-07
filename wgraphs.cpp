@@ -9,21 +9,6 @@ WGraphs::WGraphs(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("Graphs");
     move(QGuiApplication::screens().at(0)->geometry().center() - frameGeometry().center());
-    max_map[1] = 1;
-    max_map[2] = 1/0.97;
-    max_map[3] = 1/0.94;
-    max_map[4] = 1/0.92;
-    max_map[5] = 1/0.89;
-    max_map[6] = 1/0.86;
-    max_map[7] = 1/0.83;
-    max_map[8] = 1/0.81;
-    max_map[9] = 1/0.78;
-    max_map[10] = 1/0.75;
-    max_map[11] = 1/0.73;
-    max_map[12] = 1/0.71;
-    max_map[13] = 1/0.70;
-    max_map[14] = 1/0.68;
-    max_map[15] = 1/0.67;
 }
 
 WGraphs::~WGraphs()
@@ -42,6 +27,7 @@ void WGraphs::plot()
     // "lifting": {"ex": ex, "reps": reps, "w": w},
     QMap<QString, QVector<int>> m;
     getallgraph(currentUser, &map, &m, "bench");
+    qDebug() << "mapsize: " << map.size();
     plotBench();
     map.clear();
     getallgraph(currentUser, &map, &m, "row");
@@ -68,6 +54,7 @@ void WGraphs::plotSquat(){
     int max = 0;
     int min = 500;
     for (it = map.begin(); it != map.end(); it++ ){
+        qDebug() << "sval: " << it.value();
         *series << QPointF(x, it.value());
         if(it.value() > max){
             max = it.value();
@@ -112,6 +99,7 @@ void WGraphs::plotDeadlift(){
     int max = 0;
     int min = 500;
     for (it = map.begin(); it != map.end(); it++ ){
+        qDebug() << "dval: " << it.value();
         *series << QPointF(x, it.value());
         if(it.value() > max){
             max = it.value();
@@ -156,6 +144,7 @@ void WGraphs::plotPress(){
     int max = 0;
     int min = 500;
     for (it = map.begin(); it != map.end(); it++ ){
+        qDebug() << "pval: " << it.value();
         *series << QPointF(x, it.value());
         if(it.value() > max){
             max = it.value();
@@ -200,6 +189,8 @@ void WGraphs::plotBench(){
     int max = 0;
     int min = 500;
     for (it = map.begin(); it != map.end(); it++ ){
+        qDebug() << "bval: " << it.value();
+        qDebug() << it.value();
         *series << QPointF(x, it.value());
         if(it.value() > max){
             max = it.value();
@@ -244,6 +235,7 @@ void WGraphs::plotRow(){
     int max = 0;
     int min = 500;
     for (it = map.begin(); it != map.end(); it++ ){
+        qDebug() << "rval: " << it.value();
         *series << QPointF(x, it.value());
         if(it.value() > max){
             max = it.value();

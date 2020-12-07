@@ -49,6 +49,7 @@ void inputOutput::getallgraph(QString user, QMap<QString, int>* op, QMap<QString
             if(a == what && a != "food"){
                 auto value = data.value(a).toInt();
                 map[key] = value;
+                qDebug() << value;
             }
             if(a == what && a == "food"){
                 auto k = data.value(a).toObject();

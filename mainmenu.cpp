@@ -93,8 +93,9 @@ void MainMenu::setWeightLifting(int rbench, int wbench, int rsquat, int wsquat, 
     bench = max_map[rbench] * wbench;
     row = max_map[rsquat] * wsquat;
     squat = max_map[rrow] * wrow;
-    dead = max_map[rpress] * wpress;
-    press = max_map[rdead] * wdead;
+    dead = max_map[rdead] * wdead;
+    press = max_map[rpress] * wpress;
+    qDebug() << "bench: " << bench << " row: " << row << " squat: " << squat << " dead: " << dead;
     w->hide();
 }
 
