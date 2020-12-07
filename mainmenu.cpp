@@ -39,13 +39,18 @@ MainMenu::~MainMenu()
 }
 
 void MainMenu::viewProgram(){
+
    LiftProgram *lp = new LiftProgram();
+   lp->setCurrentUser(currentUser);
+   qDebug() << "**IN MENU**";
+   qDebug()<<currentUser;
    lp->show();
 }
 
 void MainMenu::setCurrentUser(QString user){
     currentUser = user;
-    ui->welcomelabel->setText("Welcome " + user + "!");
+    ui->welcomelabel->setText("Welcome " + currentUser + "!");
+    qDebug() << currentUser;
 }
 
 void MainMenu::graphSuggest(){

@@ -27,7 +27,7 @@
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="programWeek">
     <property name="geometry">
      <rect>
       <x>264</x>
@@ -82,7 +82,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="day1">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -98,7 +98,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_5">
+   <widget class="QLineEdit" name="f1">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -114,7 +114,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_6">
+   <widget class="QLineEdit" name="f4_2">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -130,7 +130,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_7">
+   <widget class="QLineEdit" name="cgHeader">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -146,7 +146,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_8">
+   <widget class="QLineEdit" name="f12">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -162,7 +162,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="day2">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -178,7 +178,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
+   <widget class="QLineEdit" name="day3">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -194,7 +194,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_9">
+   <widget class="QLineEdit" name="day4">
     <property name="geometry">
      <rect>
       <x>620</x>
@@ -210,7 +210,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_10">
+   <widget class="QLineEdit" name="f2">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -226,7 +226,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_11">
+   <widget class="QLineEdit" name="f5">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -242,7 +242,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_12">
+   <widget class="QLineEdit" name="f9">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -258,7 +258,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_13">
+   <widget class="QLineEdit" name="f13">
     <property name="geometry">
      <rect>
       <x>240</x>
@@ -274,7 +274,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_14">
+   <widget class="QLineEdit" name="f3">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -290,7 +290,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_15">
+   <widget class="QLineEdit" name="f4">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -306,7 +306,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_16">
+   <widget class="QLineEdit" name="f6">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -322,7 +322,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_17">
+   <widget class="QLineEdit" name="f7">
     <property name="geometry">
      <rect>
       <x>650</x>
@@ -338,7 +338,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_18">
+   <widget class="QLineEdit" name="f10">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -354,7 +354,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_19">
+   <widget class="QLineEdit" name="f11">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -370,7 +370,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_20">
+   <widget class="QLineEdit" name="f14">
     <property name="geometry">
      <rect>
       <x>440</x>
@@ -386,7 +386,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_21">
+   <widget class="QLineEdit" name="f15">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -407,7 +407,7 @@
      <rect>
       <x>30</x>
       <y>260</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -421,7 +421,7 @@
    <widget class="QLineEdit" name="sq1Reps">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>260</y>
       <width>41</width>
       <height>21</height>
@@ -439,7 +439,7 @@
      <rect>
       <x>30</x>
       <y>290</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -453,7 +453,7 @@
    <widget class="QLineEdit" name="sq2Reps">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>290</y>
       <width>41</width>
       <height>21</height>
@@ -471,7 +471,7 @@
      <rect>
       <x>30</x>
       <y>410</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -485,7 +485,7 @@
    <widget class="QLineEdit" name="b1Reps">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>410</y>
       <width>41</width>
       <height>21</height>
@@ -503,7 +503,7 @@
      <rect>
       <x>30</x>
       <y>560</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -517,7 +517,7 @@
    <widget class="QLineEdit" name="cgReps">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>560</y>
       <width>41</width>
       <height>21</height>
@@ -533,7 +533,7 @@
    <widget class="QLineEdit" name="dbRowReps">
     <property name="geometry">
      <rect>
-      <x>100</x>
+      <x>110</x>
       <y>700</y>
       <width>41</width>
       <height>21</height>
@@ -551,7 +551,7 @@
      <rect>
       <x>30</x>
       <y>700</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -567,7 +567,7 @@
      <rect>
       <x>240</x>
       <y>260</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -581,7 +581,7 @@
    <widget class="QLineEdit" name="dlReps">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>320</x>
       <y>260</y>
       <width>41</width>
       <height>21</height>
@@ -599,7 +599,7 @@
      <rect>
       <x>240</x>
       <y>410</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -613,7 +613,7 @@
    <widget class="QLineEdit" name="bp2Reps">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>320</x>
       <y>410</y>
       <width>41</width>
       <height>21</height>
@@ -631,7 +631,7 @@
      <rect>
       <x>240</x>
       <y>560</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -645,7 +645,7 @@
    <widget class="QLineEdit" name="PendlayReps">
     <property name="geometry">
      <rect>
-      <x>310</x>
+      <x>320</x>
       <y>560</y>
       <width>41</width>
       <height>21</height>
@@ -658,7 +658,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_37">
+   <widget class="QLineEdit" name="pullups">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -679,7 +679,7 @@
      <rect>
       <x>440</x>
       <y>260</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -693,7 +693,7 @@
    <widget class="QLineEdit" name="sq3Reps">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>520</x>
       <y>260</y>
       <width>41</width>
       <height>21</height>
@@ -711,7 +711,7 @@
      <rect>
       <x>440</x>
       <y>410</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -725,7 +725,7 @@
    <widget class="QLineEdit" name="ohpReps">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>520</x>
       <y>410</y>
       <width>41</width>
       <height>21</height>
@@ -743,7 +743,7 @@
      <rect>
       <x>440</x>
       <y>560</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -757,7 +757,7 @@
    <widget class="QLineEdit" name="gobletReps">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>520</x>
       <y>560</y>
       <width>41</width>
       <height>21</height>
@@ -773,7 +773,7 @@
    <widget class="QLineEdit" name="dbRow2Reps">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>520</x>
       <y>700</y>
       <width>41</width>
       <height>21</height>
@@ -791,7 +791,7 @@
      <rect>
       <x>650</x>
       <y>260</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -805,7 +805,7 @@
    <widget class="QLineEdit" name="bp3Reps">
     <property name="geometry">
      <rect>
-      <x>720</x>
+      <x>730</x>
       <y>260</y>
       <width>41</width>
       <height>21</height>
@@ -823,7 +823,7 @@
      <rect>
       <x>650</x>
       <y>290</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -837,7 +837,7 @@
    <widget class="QLineEdit" name="bp4Reps">
     <property name="geometry">
      <rect>
-      <x>720</x>
+      <x>730</x>
       <y>290</y>
       <width>41</width>
       <height>21</height>
@@ -855,7 +855,7 @@
      <rect>
       <x>650</x>
       <y>410</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -869,7 +869,7 @@
    <widget class="QLineEdit" name="larsenReps">
     <property name="geometry">
      <rect>
-      <x>720</x>
+      <x>730</x>
       <y>410</y>
       <width>41</width>
       <height>21</height>
@@ -887,7 +887,7 @@
      <rect>
       <x>660</x>
       <y>560</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -901,7 +901,7 @@
    <widget class="QLineEdit" name="pausedDLReps">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>740</x>
       <y>560</y>
       <width>41</width>
       <height>21</height>
@@ -919,7 +919,7 @@
      <rect>
       <x>660</x>
       <y>700</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -933,7 +933,7 @@
    <widget class="QLineEdit" name="latReps">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>740</x>
       <y>700</y>
       <width>41</width>
       <height>21</height>
@@ -964,7 +964,7 @@
      <rect>
       <x>440</x>
       <y>700</y>
-      <width>51</width>
+      <width>61</width>
       <height>21</height>
      </rect>
     </property>
@@ -979,13 +979,45 @@
     <property name="geometry">
      <rect>
       <x>680</x>
-      <y>70</y>
+      <y>80</y>
       <width>111</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>Update Maxes</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dl2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>290</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="dlReps2">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>290</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -1019,8 +1051,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>LiftProgram</receiver>
+   <slot>updateMaxes()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>718</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>637</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>programWeek</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>LiftProgram</receiver>
+   <slot>changeWeek()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>279</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>rpe()</slot>
+  <slot>updateMaxes()</slot>
+  <slot>changeWeek()</slot>
  </slots>
 </ui>

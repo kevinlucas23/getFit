@@ -14,9 +14,11 @@ class Rpe : public QMainWindow
 public:
     explicit Rpe(QWidget *parent = nullptr);
     ~Rpe();
+    void setCurrentUser(QString user);
 
 private:
     Ui::Rpe *ui;
+    QString currentUser;
 private slots:
     void back();
 };

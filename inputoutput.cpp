@@ -77,6 +77,53 @@ bool inputOutput::isGL(QString user)
     return (temp == "Gain") ? true : false;
 }
 
+int inputOutput::getSquatMax(QString user){
+    read_users();
+    auto obj =  book.value(user).toObject();
+    auto temp = obj["squatMax"];
+    qDebug() << "Bench max is:";
+    qDebug() << temp.toInt();
+    return temp.toInt();
+}
+
+int inputOutput::getBenchMax(QString user){
+    read_users();
+    auto obj =  book.value(user).toObject();
+    qDebug() << "Bench max is:";
+    qDebug() << obj["benchMax"].toString();
+    return obj["benchMax"].toInt();
+}
+
+int inputOutput::getDeadliftMax(QString user){
+    read_users();
+    auto obj =  book.value(user).toObject();
+    qDebug() << "Deadlift max is:";
+    qDebug() << obj["deadliftMax"].toString();
+    return obj["deadliftMax"].toInt();
+}
+
+void inputOutput::updateMaxes(QString user,qint32 squat, qint32 bench, qint32 deadlift){
+    read_users();
+    auto obj = book.value(user).toObject();
+    QJsonObject statsObject;
+    qDebug() << "Adding new maxes to JSON\n";
+    qDebug() << user;
+    qDebug() << squat;
+    qDebug() << bench;
+    qDebug() << deadlift;
+    if(squat != 0){
+        obj["squatMax"] = squat;
+    }
+    if(bench != 0 ){
+        obj["benchMax"] = bench;
+    }
+    if(deadlift != 0){
+        obj["deadliftMax"] = deadlift;
+    }
+    book[user] = obj;
+    updateFile(book);
+}
+
 void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy, double bench, double row, double squat, double dead, double press){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "lifting": {"ex": ex, "reps": reps, "w": w}, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     read_users();
@@ -139,6 +186,9 @@ bool inputOutput::create_user(Data k)
     all.insert("Phone number", k.getnumber());
     all.insert("Question", k.getQuestion());
     all.insert("Answer", k.getAns());
+    all.insert("squatMax",k.getSquat());
+    all.insert("benchMax",k.getBench());
+    all.insert("deadliftMax",k.getDeadlift());
     auto date = QDate::currentDate();
     QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     all.insert("sign_in", ds);

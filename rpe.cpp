@@ -18,8 +18,13 @@ Rpe::~Rpe()
     delete ui;
 }
 
+void Rpe::setCurrentUser(QString user){
+    currentUser = user;
+}
+
 void Rpe::back(){
     this->hide();
     LiftProgram *lp = new LiftProgram();
+    lp->setCurrentUser(currentUser);
     lp->show();
 }

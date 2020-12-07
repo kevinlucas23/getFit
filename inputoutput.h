@@ -28,6 +28,9 @@ struct Data{
     QString username;
     QString password;
     bool gain_lose;
+    qint32 squatMax = 0;
+    qint32 benchMax = 0;
+    qint32 deadliftMax = 0;
     Data(){
         weight = 0;
         height = 0;
@@ -66,6 +69,15 @@ struct Data{
     QString getAns(){
         return ans;
     }
+    qint32 getSquat(){
+        return squatMax;
+    }
+    qint32 getBench(){
+        return benchMax;
+    }
+    qint32 getDeadlift(){
+        return deadliftMax;
+    }
 };
 
 class inputOutput
@@ -85,6 +97,11 @@ public:
     std::pair<bool, QString> user_recovery(QString user, QString question, QString ans);
     void update_pass(QString kev, QString pass);
     void getQ(QString kev, QString* temp);
+    void updateMaxes(QString user,qint32 squat, qint32 bench, qint32 deadlift);
+    int getBenchMax(QString user);
+    int getSquatMax(QString user);
+    int getDeadliftMax(QString user);
+
 
 protected:
     QJsonObject book;
