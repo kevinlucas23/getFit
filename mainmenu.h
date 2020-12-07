@@ -63,6 +63,7 @@ private slots:
     void setFoodIntake(int c, int p, int fv, int d);
     void setWeightLifting(int rbench, int wbench, int rsquat, int wsquat, int rrow, int wrow, int rpress, int wpress, int rdead, int wdead);
     void noData();
+    void viewProgram();
 };
 
 #endif // MAINMENU_H

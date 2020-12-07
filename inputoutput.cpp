@@ -78,6 +78,53 @@ bool inputOutput::isGL(QString user)
     return (temp == "Gain") ? true : false;
 }
 
+int inputOutput::getSquatMax(QString user){
+    read_users();
+    auto obj =  book.value(user).toObject();
+    auto temp = obj["squatMax"];
+    qDebug() << "Bench max is:";
+    qDebug() << temp.toInt();
+    return temp.toInt();
+}
+
+int inputOutput::getBenchMax(QString user){
+    read_users();
+    auto obj =  book.value(user).toObject();
+    qDebug() << "Bench max is:";
+    qDebug() << obj["benchMax"].toString();
+    return obj["benchMax"].toInt();
+}
+
+int inputOutput::getDeadliftMax(QString user){
+    read_users();
+    auto obj =  book.value(user).toObject();
+    qDebug() << "Deadlift max is:";
+    qDebug() << obj["deadliftMax"].toString();
+    return obj["deadliftMax"].toInt();
+}
+
+void inputOutput::updateMaxes(QString user,qint32 squat, qint32 bench, qint32 deadlift){
+    read_users();
+    auto obj = book.value(user).toObject();
+    QJsonObject statsObject;
+    qDebug() << "Adding new maxes to JSON\n";
+    qDebug() << user;
+    qDebug() << squat;
+    qDebug() << bench;
+    qDebug() << deadlift;
+    if(squat != 0){
+        obj["squatMax"] = squat;
+    }
+    if(bench != 0 ){
+        obj["benchMax"] = bench;
+    }
+    if(deadlift != 0){
+        obj["deadliftMax"] = deadlift;
+    }
+    book[user] = obj;
+    updateFile(book);
+}
+
 void inputOutput::addData(QString user, QDate date, int weight, int cals, int sleep, int carbs, int proteins, int fv, int dairy, double bench, double row, double squat, double dead, double press){
     // "Dates": {"11/28/20": {"weight": weight, "sleep": sleep, "cals": cals, "lifting": {"ex": ex, "reps": reps, "w": w}, "food": {"carbs": carbs, "proteins": proteins, "fv": fv, "dairy": dairy}}}
     read_users();
@@ -137,7 +184,12 @@ bool inputOutput::create_user(Data k)
     all.insert("Weight", k.getweight());
     all.insert("Password", k.getpasswd());
     all.insert("G/L", (k.getgain()) ? "Gain" : "Lose");
-
+    all.insert("Phone number", k.getnumber());
+    all.insert("Question", k.getQuestion());
+    all.insert("Answer", k.getAns());
+    all.insert("squatMax",k.getSquat());
+    all.insert("benchMax",k.getBench());
+    all.insert("deadliftMax",k.getDeadlift());
     auto date = QDate::currentDate();
     QString ds = QString::number(date.year()) + "/" + QString::number(date.month()) + "/" + QString::number(date.day());
     all.insert("sign_in", ds);
@@ -187,4 +239,56 @@ bool inputOutput::check_user(QString kev, QString pass)
 QJsonObject inputOutput::getBook()
 {
     return book;
+}
+
+std::pair<bool, QString> inputOutput::user_recovery(QString user, QString question, QString ans)
+{
+    bool a = false, b = false;
+    read_users();
+    auto obj =  book.value(user).toObject();
+    if(book.contains(user)){
+        auto obj =  book.value(user).toObject();
+        QStringList keys = obj.keys();
+        for(auto key : keys){
+            if (key == "Question"){
+                auto value = obj.take(key);
+                if(value.toString() == question){
+                    a = true;
+                }
+            }
+            if (key == "Answer"){
+                auto value = obj.take(key);
+                if(value.toString() == ans){
+                    b = true;
+                }
+            }
+        }
+        if(!a && b)
+            return {false, "wrong question"};
+        else if(a && !b)
+            return {false, "wrong ans"};
+        else if(!a && !b)
+            return {false, "wrong everything"};
+        else
+            return {true, ""};
+    }
+    return {false,"wrong user"};
+}
+
+void inputOutput::update_pass(QString kev, QString pass)
+{
+    read_users();
+    auto obj =  book.value(kev).toObject();
+    obj["Password"] = pass;
+    book[kev] = obj;
+
+    updateFile(book);
+}
+
+void inputOutput::getQ(QString kev, QString *temp)
+{
+    read_users();
+    auto obj =  book.value(kev).toObject();
+    auto k = obj["Question"];
+    *temp = k.toString();
 }

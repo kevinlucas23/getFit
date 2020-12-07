@@ -290,13 +290,26 @@
     <property name="geometry">
      <rect>
       <x>680</x>
-      <y>380</y>
+      <y>390</y>
       <width>211</width>
       <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>Show Graphs/Suggestions</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="goToProgram">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>330</y>
+      <width>211</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>View Program</string>
     </property>
    </widget>
   </widget>
@@ -306,7 +319,7 @@
      <x>0</x>
      <y>0</y>
      <width>920</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -402,7 +415,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>486</x>
-     <y>466</y>
+     <y>465</y>
     </hint>
     <hint type="destinationlabel">
      <x>653</x>
@@ -442,6 +455,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>goToProgram</sender>
+   <signal>clicked()</signal>
+   <receiver>MainMenu</receiver>
+   <slot>viewProgram()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>726</x>
+     <y>372</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>686</x>
+     <y>366</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>showGraphs()</slot>
@@ -454,5 +483,6 @@
   <slot>sleep()</slot>
   <slot>graphSuggest()</slot>
   <slot>noData()</slot>
+  <slot>viewProgram()</slot>
  </slots>
 </ui>

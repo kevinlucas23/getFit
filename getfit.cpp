@@ -41,7 +41,7 @@ getFit::~getFit()
 
 void getFit::on_push_signin_clicked()
 {
-    QString username = ui->user_sign->text();
+    username = ui->user_sign->text();
     QString password = ui->passw_sign->text();
     read_users();
     if(!check_user(username, password)){
@@ -81,4 +81,17 @@ void getFit::on_button_s_clicked()
 void getFit::on_passw_sign_returnPressed()
 {
     on_push_signin_clicked();
+}
+
+void getFit::on_forgot_pass_clicked()
+{
+    QString k;
+    getQ(ui->user_sign->text(),&k);
+    this->hide();
+    Password_recovery userc;
+    userc.setQ(k);
+    userc.setModal(true);
+    userc.exec();
+    userc.show();
+
 }

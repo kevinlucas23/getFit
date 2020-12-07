@@ -120,7 +120,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="forgot_pass">
      <property name="geometry">
       <rect>
        <x>70</x>

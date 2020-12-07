@@ -21,10 +21,16 @@ struct Data{
     QString sex;
     qreal weight;
     qreal height;
+    qreal number;
+    QString question;
+    QString ans;
     qint32 age;
     QString username;
     QString password;
     bool gain_lose;
+    qint32 squatMax = 0;
+    qint32 benchMax = 0;
+    qint32 deadliftMax = 0;
     Data(){
         weight = 0;
         height = 0;
@@ -54,6 +60,24 @@ struct Data{
     bool getgain(){
         return gain_lose;
     }
+    QString getQuestion(){
+        return question;
+    }
+    qreal getnumber(){
+        return number;
+    }
+    QString getAns(){
+        return ans;
+    }
+    qint32 getSquat(){
+        return squatMax;
+    }
+    qint32 getBench(){
+        return benchMax;
+    }
+    qint32 getDeadlift(){
+        return deadliftMax;
+    }
 };
 
 class inputOutput
@@ -70,6 +94,14 @@ public:
     bool isGL(QString user);
     bool check_user(QString kev, QString pass);
     QJsonObject getBook();
+    std::pair<bool, QString> user_recovery(QString user, QString question, QString ans);
+    void update_pass(QString kev, QString pass);
+    void getQ(QString kev, QString* temp);
+    void updateMaxes(QString user,qint32 squat, qint32 bench, qint32 deadlift);
+    int getBenchMax(QString user);
+    int getSquatMax(QString user);
+    int getDeadliftMax(QString user);
+
 
 protected:
     QJsonObject book;
