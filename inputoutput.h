@@ -21,6 +21,9 @@ struct Data{
     QString sex;
     qreal weight;
     qreal height;
+    qreal number;
+    QString question;
+    QString ans;
     qint32 age;
     QString username;
     QString password;
@@ -54,6 +57,15 @@ struct Data{
     bool getgain(){
         return gain_lose;
     }
+    QString getQuestion(){
+        return question;
+    }
+    qreal getnumber(){
+        return number;
+    }
+    QString getAns(){
+        return ans;
+    }
 };
 
 class inputOutput
@@ -70,6 +82,9 @@ public:
     bool isGL(QString user);
     bool check_user(QString kev, QString pass);
     QJsonObject getBook();
+    std::pair<bool, QString> user_recovery(QString user, QString question, QString ans);
+    void update_pass(QString kev, QString pass);
+    void getQ(QString kev, QString* temp);
 
 protected:
     QJsonObject book;

@@ -17,10 +17,12 @@ SOURCES += \
     main.cpp \
     getfit.cpp \
     mainmenu.cpp \
+    password_recovery.cpp \
     showgraphs.cpp \
     sleep.cpp \
     sleeptips.cpp \
     suggestions.cpp \
+    updatepassword.cpp \
     updateweight.cpp \
     usercreation.cpp \
     weightlifting.cpp \
@@ -34,10 +36,12 @@ HEADERS += \
     inputoutput.h \
     lifttips.h \
     mainmenu.h \
+    password_recovery.h \
     showgraphs.h \
     sleep.h \
     sleeptips.h \
     suggestions.h \
+    updatepassword.h \
     updateweight.h \
     usercreation.h \
     weightlifting.h \
@@ -50,10 +54,12 @@ FORMS += \
     graphsuggest.ui \
     lifttips.ui \
     mainmenu.ui \
+    password_recovery.ui \
     showgraphs.ui \
     sleep.ui \
     sleeptips.ui \
     suggestions.ui \
+    updatepassword.ui \
     updateweight.ui \
     usercreation.ui \
     weightlifting.ui \

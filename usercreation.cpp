@@ -59,6 +59,9 @@ void userCreation::on_push_createa_clicked()
                 us.weight = ui->weightbox->text().toInt();
                 us.height = ui->heightbox->text().toInt();
                 us.sex = ui->sexbox->currentText();
+                us.number = ui->phone_num->text().toInt();
+                us.question = ui->question_l->text();
+                us.ans = ui->ans_l->text();
                 QString temp = ui->comboBox->currentText();
                 us.gain_lose = (temp == "Gain Weight") ? true : false;
                 if(!ui->email_create->text().contains("@")){

@@ -161,11 +161,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="ans_l"/>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -265,9 +265,9 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="passw2_create_2">
+          <widget class="QLineEdit" name="phone_num">
            <property name="echoMode">
-            <enum>QLineEdit::Password</enum>
+            <enum>QLineEdit::Normal</enum>
            </property>
           </widget>
          </item>
@@ -293,7 +293,7 @@ recovery</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="question_l"/>
        </item>
       </layout>
      </item>
